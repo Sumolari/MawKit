@@ -78,6 +78,7 @@ NSMutableDictionary<NSString *, GADBannerView *> *banners;
 
 - (void)adViewWillDismissScreen:(GADBannerView *)bannerView
 {
+#pragma unused( bannerView )
 	[self requestNewBanner];
 }
 
@@ -354,6 +355,7 @@ void _showTopBanner( std::string adUnitID )
 
 void _showBottomBanner( std::string adUnitID )
 {
+#pragma unused( adUnitID )
 	MK::Log::nonCriticalCrash( "Method _showBottomBanner not implemented yet" );
 
 	/*

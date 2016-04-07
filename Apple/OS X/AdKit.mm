@@ -41,24 +41,6 @@ void _init( std::string interstitialUnitID,
 	                       "MK::AdKit::_init()" );
 }
 
-void _sessionStart()
-{
-	Log::nonCriticalCrash( MK::Log::ErrorMessageFormat::METHOD_NOT_AVAILABLE_ON_OSX,
-	                       "MK::AdKit::_sessionStart()" );
-}
-
-void _sessionEnd()
-{
-	Log::nonCriticalCrash( MK::Log::ErrorMessageFormat::METHOD_NOT_AVAILABLE_ON_OSX,
-	                       "MK::AdKit::_sessionEnd()" );
-}
-
-void _preloadAd( const AdType & )
-{
-	Log::nonCriticalCrash( MK::Log::ErrorMessageFormat::METHOD_NOT_AVAILABLE_ON_OSX,
-	                       "MK::AdKit::_preloadAd()" );
-}
-
 void _showInterstitial( std::string adUnitID )
 {
 #pragma unused( adUnitID )
