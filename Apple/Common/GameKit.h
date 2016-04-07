@@ -20,8 +20,8 @@
 namespace MK {
 namespace GameKit {
 
-extern std::vector<std::string> leaderboards; ///< List of leaderboards.
-extern std::vector<std::string> achievements; ///< List of achievements.
+extern NSArray<NSString *> *leaderboards; ///< List of leaderboards.
+extern NSArray<NSString *> *achievements; ///< List of achievements.
 
 /// `LoginState` represents possible states in a login process.
 enum class LoginState {

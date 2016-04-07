@@ -15,8 +15,8 @@
 namespace MK {
 namespace GameKit {
 
-std::vector<std::string> leaderboards;
-std::vector<std::string> achievements;
+NSArray<NSString *> *leaderboards;
+NSArray<NSString *> *achievements;
 
 LoginState currentLoginState = LoginState::Pending;
 
@@ -28,13 +28,21 @@ void _init()
 	cocos2d::ValueVector aIDs = ids.at( "Achievements" ).asValueVector();
 	cocos2d::ValueVector lIDs = ids.at( "Leaderboards" ).asValueVector();
 
+	NSMutableArray<NSString *> *mutableAchievements =
+	[NSMutableArray arrayWithCapacity:aIDs.size()];
+	NSMutableArray<NSString *> *mutableLeaderboards =
+	[NSMutableArray arrayWithCapacity:lIDs.size()];
+
 	for ( auto value : aIDs ) {
-		achievements.push_back( value.asString() );
+		[mutableAchievements addObject:to_nsstring( value.asString() )];
 	}
 
 	for ( auto value : lIDs ) {
-		leaderboards.push_back( value.asString() );
+		[mutableLeaderboards addObject:to_nsstring( value.asString() )];
 	}
+
+	achievements = mutableAchievements;
+	leaderboards = mutableLeaderboards;
 
 	// Show the "Sign In" window.
 	_signInPlayer();
@@ -42,14 +50,14 @@ void _init()
 
 void _requestScore( const int lID, VoidLongLongBoolCB callback )
 {
-	if ( leaderboards.size() > lID ) {
+	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
 			Log::debug(
 			"Can't retrieve score from Leaderboard %d as player didn't log in.", lID );
 		}
 		else {
 			GKLeaderboard *leaderboardRequest = [[GKLeaderboard alloc] init];
-			leaderboardRequest.identifier = to_nsstring( leaderboards[lID] );
+			leaderboardRequest.identifier     = leaderboards[lID];
 			if ( leaderboardRequest != nil ) {
 				[leaderboardRequest
 				loadScoresWithCompletionHandler:^( NSArray *scores, NSError *error ) {
@@ -69,14 +77,14 @@ void _requestScore( const int lID, VoidLongLongBoolCB callback )
 	}
 	else {
 		Log::nonCriticalCrash(
-		"Trying to retrieve score from leaderbord %d out of %d", lID, leaderboards.size() );
+		"Trying to retrieve score from leaderbord %d out of %d", lID, leaderboards.count );
 	}
 }
 
 void _requestFriendsScores(
 const int lID, std::function<void( std::map<std::string, unsigned long long>, bool )> callback )
 {
-	if ( leaderboards.size() > lID ) {
+	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
 			Log::debug(
 			"Can't retrieve score from Leaderboard %d as player didn't log in.", lID );
@@ -85,7 +93,7 @@ const int lID, std::function<void( std::map<std::string, unsigned long long>, bo
 			GKLeaderboard *leaderboardRequest = [[GKLeaderboard alloc] init];
 			leaderboardRequest.playerScope = GKLeaderboardPlayerScopeFriendsOnly;
 			leaderboardRequest.timeScope   = GKLeaderboardTimeScopeAllTime;
-			leaderboardRequest.identifier  = to_nsstring( leaderboards[lID] );
+			leaderboardRequest.identifier  = leaderboards[lID];
 			if ( leaderboardRequest != nil ) {
 				[leaderboardRequest
 				loadScoresWithCompletionHandler:^( NSArray *scores, NSError *error ) {
@@ -116,20 +124,20 @@ const int lID, std::function<void( std::map<std::string, unsigned long long>, bo
 	}
 	else {
 		Log::nonCriticalCrash(
-		"Trying to retrieve score from leaderbord %d out of %d", lID, leaderboards.size() );
+		"Trying to retrieve score from leaderbord %d out of %d", lID, leaderboards.count );
 	}
 }
 
 void _submitScore( const long long score, const int lID )
 {
-	if ( leaderboards.size() > lID ) {
+	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
 			Log::debug(
 			"Can't submit score to Leaderboard %d as player didn't log in.", lID );
 		}
 		else {
-			GKScore *scoreReporter = [[GKScore alloc]
-			initWithLeaderboardIdentifier:to_nsstring( leaderboards[lID] )];
+			GKScore *scoreReporter =
+			[[GKScore alloc] initWithLeaderboardIdentifier:leaderboards[lID]];
 
 			scoreReporter.value   = score;
 			scoreReporter.context = 0;
@@ -146,22 +154,22 @@ void _submitScore( const long long score, const int lID )
 	}
 	else {
 		Log::nonCriticalCrash(
-		"Trying to submit score (%lld) to leaderbord %d out of %d", score, lID,
-		leaderboards.size() );
+		"Trying to submit score (%lld) to leaderboard %d out of %d", score, lID,
+		leaderboards.count );
 	}
 }
 
 void _reportAchievementProgress( const int aID, const float progress )
 {
-	if ( achievements.size() > aID ) {
+	if ( achievements.count > aID ) {
 		if ( !isAvailable() ) {
 			Log::debug( "Can't report achievement progress for achievement %d "
 			            "as player didn't log in.",
 			            aID );
 		}
 		else {
-			GKAchievement *achievement = [[GKAchievement alloc]
-			initWithIdentifier:to_nsstring( achievements[aID] )];
+			GKAchievement *achievement =
+			[[GKAchievement alloc] initWithIdentifier:achievements[aID]];
 			if ( achievement ) {
 				achievement.percentComplete       = progress * 100;
 				achievement.showsCompletionBanner = true;
@@ -181,13 +189,13 @@ void _reportAchievementProgress( const int aID, const float progress )
 	else {
 		Log::nonCriticalCrash(
 		"Trying to submit progress (%.2f) for unknown achievement %d out of %d",
-		progress * 100, aID, achievements.size() );
+		progress * 100, aID, achievements.count );
 	}
 }
 
 void _requestAchievement( const int aID, std::function<void( float, bool )> callback )
 {
-	if ( achievements.size() > aID ) {
+	if ( achievements.count > aID ) {
 
 		if ( !isAvailable() ) {
 			Log::debug(
@@ -206,7 +214,7 @@ void _requestAchievement( const int aID, std::function<void( float, bool )> call
 
 			  if ( returnedAchievements != nil ) {
 
-				  NSString *achievementID = to_nsstring( achievements[aID] );
+				  NSString *achievementID = achievements[aID];
 
 				  for ( GKAchievement *achievement in returnedAchievements ) {
 					  if ( [achievement.identifier isEqualToString:achievementID] ) {
@@ -229,7 +237,7 @@ void _requestAchievement( const int aID, std::function<void( float, bool )> call
 	else {
 		Log::nonCriticalCrash(
 		"Trying to request progress for unknown achievement %d out of %d", aID,
-		achievements.size() );
+		achievements.count );
 	}
 }
 

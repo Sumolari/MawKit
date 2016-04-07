@@ -34,7 +34,7 @@ namespace GameKit {
 
 void _showLeaderboard( const int lID )
 {
-	if ( leaderboards.size() > lID ) {
+	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
 			Log::debug( "Can't open Leaderboard %d as player didn't log in.", lID );
 		}
@@ -47,7 +47,7 @@ void _showLeaderboard( const int lID )
 				gkController.gameCenterDelegate = gameCenterDelegate;
 				gkController.viewState = GKGameCenterViewControllerStateLeaderboards;
 				gkController.leaderboardTimeScope = GKLeaderboardTimeScopeToday; // GKLeaderboardTimeScopeAllTime;
-				gkController.leaderboardIdentifier = to_nsstring( leaderboards[lID] );
+				gkController.leaderboardIdentifier = leaderboards[lID];
 
 				[[[UIApplication sharedApplication].delegate window]
 				 .rootViewController presentViewController:gkController
@@ -58,7 +58,7 @@ void _showLeaderboard( const int lID )
 	}
 	else {
 		Log::nonCriticalCrash( "Trying to show leaderbord %d out of %d", lID,
-		                       leaderboards.size() );
+		                       leaderboards.count );
 	}
 }
 
