@@ -22,69 +22,48 @@ namespace MK {
  */
 namespace AdKit {
 
-/**
- *  `AdKit::Interstitial` namespace features constants used to decide when to
- *  show an interstitial ad.
- */
-namespace Interstitial {
-
-/**
- *  Whether insterstitial ads are disabled (`true`) or not.
- */
-constexpr bool DISABLE = false;
-
-}; // namespace Interstitial
-
-/**
- *  `AdKit::TopBanner` namespace features constants used to decide when to show
- *  a top banner ad.
- */
-namespace TopBanner {
-
-/**
- *  Whether top banner is disabled (`true`) or not.
- */
-constexpr bool DISABLE = true;
-
-}; // namespace TopBanner
-
-/**
- *  `AdKit::BottomBanner` namespace features constants used to decide when to
- *  show a bottom banner ad.
- */
-namespace BottomBanner {
-
-/**
- *  Whether top banner is disabled (`true`) or not.
- */
-constexpr bool DISABLE = true;
-
-}; // namespace BottomBanner
-
-/// Type of ads that can be displayed in the game.
-enum class AdType {
+/// Size of banner view ad.
+enum class BannerSize {
 	/**
-     *  Interstitial, blocking, modal, ads. Include video ads.
+     *  300x50, phones and tablets. `kGADAdSizeBanner`.
      */
-	Interstitial = 0,
+	StandardBanner = 0,
 	/**
-     *  Banner displayed on the top of the screen.
+     *  320x100, phones and tablets. `kGADAdSizeLargeBanner`.
      */
-	TopBanner = 1,
+	LargeBanner = 1,
 	/**
-     *  Banner displayed on the bottom of the screen.
+     *  300x250, phones and tablets. `kGADAdSizeMediumRectangle`.
      */
-	BottomBanner = 2,
+	IABMediumRectangle = 2,
 	/**
-     *  Video reward.
+     *  468x60, phones and tablets. `kGADAdSizeFullBanner`.
      */
-	VideoReward = 3
+	IABFullSizeBanner = 3,
+	/**
+     *  728x60, phones and tablets. `kGADAdSizeLeaderboard`.
+     */
+	IABLeaderboard = 4,
+	/**
+     *  screen width x 32|50|90, phones and tablets.
+     *  `kGADAdSizeSmartBannerPortrait`.
+     */
+	SmartBannerPortrait = 5,
+	/**
+     *  screen width x 32|50|90, phones and tablets.
+     *  `kGADAdSizeSmartBannerLandscape`.
+     */
+	SmartBannerLandscape = 6
 };
 
 /**
  *  Performs any initialization required by the ads adapter.
  *
  *  @param interstitialUnitID ID of interstitial Ad unit to be queried.
+ *  @param bottomBannerUnitID ID of bottom banner view Ad unit to be queried.
+ *  @param bottomBannerSize   Size of bottom banner view Ad.
+ *  @param topBannerUnitID    ID of top banner view Ad unit to be queried.
+ *  @param topBannerSize      Size of top banner view Ad.
  *  @param videoRewardUnitID  ID of video reward Ad unit to be queried.
  *  @param adColonyAppID      ID of AdColony app to be queried.
  *  @param adColonyZoneID     ID of AdColony zone.
@@ -92,29 +71,16 @@ enum class AdType {
  *  @param testingDevices     List of testing devices.
  */
 void init( std::string interstitialUnitID,
+           std::string bottomBannerUnitID,
+           BannerSize bottomBannerSize,
+           std::string topBannerUnitID,
+           BannerSize topBannerSize,
            std::string videoRewardUnitID,
            std::string adColonyAppID,
            std::string adColonyZoneID,
            std::string adColonyCustomID,
            std::vector<std::string>
            testingDevices );
-
-/**
- *  Method called when application beings being in foreground.
- */
-void sessionStart();
-
-/**
- *  Method called when application begins being in background.
- */
-void sessionEnd();
-
-/**
- *  Preloads ads of given type but shows no ad.
- *
- *  @param type Type of add to preload.
- */
-void preloadAd( const AdType &type );
 
 /**
  *  Shows an interstitial ad.

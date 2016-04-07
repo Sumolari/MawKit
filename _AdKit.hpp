@@ -21,6 +21,10 @@ namespace AdKit {
  *  @note Do not call this method directly.
  *
  *  @param interstitialUnitID ID of interstitial Ad unit to be queried.
+ *  @param bottomBannerUnitID ID of bottom banner view Ad unit to be queried.
+ *  @param bottomBannerSize   Size of bottom banner view Ad.
+ *  @param topBannerUnitID    ID of top banner view Ad unit to be queried.
+ *  @param topBannerSize      Size of top banner view Ad.
  *  @param videoRewardUnitID  ID of video reward Ad unit to be queried.
  *  @param adColonyAppID      ID of AdColony app to be queried.
  *  @param adColonyZoneID     ID of AdColony zone.
@@ -28,44 +32,16 @@ namespace AdKit {
  *  @param testingDevices     List of testing devices.
  */
 void _init( std::string interstitialUnitID,
+            std::string bottomBannerUnitID,
+            BannerSize bottomBannerSize,
+            std::string topBannerUnitID,
+            BannerSize topBannerSize,
             std::string videoRewardUnitID,
             std::string adColonyAppID,
             std::string adColonyZoneID,
             std::string adColonyCustomID,
             std::vector<std::string>
             testingDevices );
-
-/**
- *  Method called when application beings being in foreground.
- *
- *  @native
- *
- *  @note Does not take into account whether ads are enabled or not,
- *  @note Do not call this method directly.
- */
-void _sessionStart();
-
-/**
- *  Method called when application begins being in background.
- *
- *  @native
- *
- *  @note Does not take into account whether ads are enabled or not,
- *  @note Do not call this method directly.
- */
-void _sessionEnd();
-
-/**
- *  Preloads ads of given type but shows no ad.
- *
- *  @native
- *
- *  @note Does not take into account whether ads are enabled or not,
- *  @note Do not call this method directly.
- *
- *  @param type Type of add to preload.
- */
-void _preloadAd( const AdType &type );
 
 /**
  *  Shows an interstitial ad.

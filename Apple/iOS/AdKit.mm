@@ -14,12 +14,98 @@
 
 #include "../../Analytics.hpp"
 #include "../../Device.hpp"
+#include "../../Log.hpp"
 #include "../Common/CPPUtils.h"
 #include "GADMAdapterAdColonyExtras.h"
 #include "GADMAdapterAdColonyInitializer.h"
 
+//------------------------------------------------------------------------------
+// Storage of active delegates and ads.
+//------------------------------------------------------------------------------
+
 NSMutableDictionary<NSString *, id> *delegates;
 NSMutableDictionary<NSString *, GADInterstitial *> *interstitials;
+NSMutableDictionary<NSString *, GADBannerView *> *banners;
+
+//------------------------------------------------------------------------------
+#pragma mark - Banner view
+//------------------------------------------------------------------------------
+
+@interface BannerViewDelegate : NSObject <GADBannerViewDelegate>
+
+@property ( nonatomic, strong ) NSString *adUnitId;
+
+@property ( nonatomic, strong ) NSArray *testDevices;
+
+@property ( nonatomic ) MK::AdKit::BannerSize size;
+
+- (id)initWithAdUnitID:(NSString *)adID
+               forSize:(MK::AdKit::BannerSize)size
+        andTestDevices:(NSArray *)devices;
+
++ (GADAdSize)GADAdSizeForMKBannerSize:(MK::AdKit::BannerSize)size;
+
+@end
+
+@implementation BannerViewDelegate
+
+- (id)initWithAdUnitID:(NSString *)adID
+               forSize:(MK::AdKit::BannerSize)size
+        andTestDevices:(NSArray *)devices
+{
+	self = [super init];
+	if ( self ) {
+		self.adUnitId    = adID;
+		self.size        = size;
+		self.testDevices = devices;
+	}
+	return self;
+}
+
+- (void)requestNewBanner
+{
+	banners[self.adUnitId] = [[GADBannerView alloc]
+	initWithAdSize:[self.class GADAdSizeForMKBannerSize:self.size]];
+	banners[self.adUnitId].adUnitID = self.adUnitId;
+	banners[self.adUnitId].delegate = self;
+	banners[self.adUnitId].rootViewController =
+	[UIApplication sharedApplication].keyWindow.rootViewController;
+
+	GADRequest *request = [GADRequest request];
+	request.testDevices = self.testDevices;
+	[banners[self.adUnitId] loadRequest:request];
+}
+
+- (void)adViewWillDismissScreen:(GADBannerView *)bannerView
+{
+	[self requestNewBanner];
+}
+
++ (GADAdSize)GADAdSizeForMKBannerSize:(MK::AdKit::BannerSize)size
+{
+	switch ( size ) {
+	case MK::AdKit::BannerSize::StandardBanner:
+		return kGADAdSizeBanner;
+	case MK::AdKit::BannerSize::LargeBanner:
+		return kGADAdSizeLargeBanner;
+	case MK::AdKit::BannerSize::IABMediumRectangle:
+		return kGADAdSizeMediumRectangle;
+	case MK::AdKit::BannerSize::IABFullSizeBanner:
+		return kGADAdSizeFullBanner;
+	case MK::AdKit::BannerSize::IABLeaderboard:
+		return kGADAdSizeLeaderboard;
+	case MK::AdKit::BannerSize::SmartBannerPortrait:
+		return kGADAdSizeSmartBannerPortrait;
+	case MK::AdKit::BannerSize::SmartBannerLandscape:
+		return kGADAdSizeSmartBannerLandscape;
+	}
+}
+
+@end
+
+//------------------------------------------------------------------------------
+#pragma mark - Interstitial
+//------------------------------------------------------------------------------
 
 @interface InterstitialDelegate : NSObject <GADInterstitialDelegate>
 
@@ -29,7 +115,7 @@ NSMutableDictionary<NSString *, GADInterstitial *> *interstitials;
 
 - (id)initWithAdUnitID:(NSString *)adID andTestDevices:(NSArray *)devices;
 
-- (void)requestNewDeathInterstitial;
+- (void)requestNewInterstitial;
 
 @end
 
@@ -45,7 +131,7 @@ NSMutableDictionary<NSString *, GADInterstitial *> *interstitials;
 	return self;
 }
 
-- (void)requestNewDeathInterstitial
+- (void)requestNewInterstitial
 {
 	interstitials[self.adUnitId] = [[GADInterstitial alloc] initWithAdUnitID:self.adUnitId];
 	interstitials[self.adUnitId].delegate =
@@ -58,10 +144,14 @@ NSMutableDictionary<NSString *, GADInterstitial *> *interstitials;
 - (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial
 {
 #pragma unused( interstitial )
-	[self requestNewDeathInterstitial];
+	[self requestNewInterstitial];
 }
 
 @end
+
+//------------------------------------------------------------------------------
+#pragma mark - Video reward
+//------------------------------------------------------------------------------
 
 @interface RewardVideoDelegate : NSObject <GADRewardBasedVideoAdDelegate>
 
@@ -120,10 +210,18 @@ NSMutableDictionary<NSString *, GADInterstitial *> *interstitials;
 
 @end
 
+//------------------------------------------------------------------------------
+#pragma mark - MawKit
+//------------------------------------------------------------------------------
+
 namespace MK {
 namespace AdKit {
 
 void _init( std::string interstitialUnitID,
+            std::string bottomBannerUnitID,
+            BannerSize bottomBannerSize,
+            std::string topBannerUnitID,
+            BannerSize topBannerSize,
             std::string videoRewardUnitID,
             std::string adColonyAppID,
             std::string adColonyZoneID,
@@ -131,51 +229,76 @@ void _init( std::string interstitialUnitID,
             std::vector<std::string>
             testingDevices )
 {
-	NSString *interstitialID = to_nsstring( interstitialUnitID );
-	NSString *videoRewardID  = to_nsstring( videoRewardUnitID );
+	interstitials = [NSMutableDictionary dictionary];
+	banners       = [NSMutableDictionary dictionary];
+	delegates     = [NSMutableDictionary dictionary];
 
-	interstitials[interstitialID] =
-	[[GADInterstitial alloc] initWithAdUnitID:interstitialID];
+	NSArray *ns_testingDevices = to_nsarray( testingDevices );
 
-	interstitials = [@{
-		interstitialID: [[GADInterstitial alloc] initWithAdUnitID:interstitialID]
-	} mutableCopy];
+	if ( interstitialUnitID.size() > 0 ) {
+		NSString *interstitialID = to_nsstring( interstitialUnitID );
 
-	delegates = [@{
-		videoRewardID: [[RewardVideoDelegate alloc] initWithAdUnitID:videoRewardID
-		                                                 andCallback:nil],
-		interstitialID:
+		interstitials[interstitialID] =
+		[[GADInterstitial alloc] initWithAdUnitID:interstitialID];
+
+		delegates[interstitialID] =
 		[[InterstitialDelegate alloc] initWithAdUnitID:interstitialID
-		                                andTestDevices:to_nsarray( testingDevices )],
-	} mutableCopy];
+		                                andTestDevices:ns_testingDevices];
 
-	GADRequest *request = [GADRequest request];
-	request.testDevices = to_nsarray( testingDevices );
-	[interstitials[interstitialID] loadRequest:request];
+		GADRequest *request = [GADRequest request];
+		request.testDevices = ns_testingDevices;
+		[interstitials[interstitialID] loadRequest:request];
 
-	interstitials[interstitialID].delegate =
-	(id<GADInterstitialDelegate>)delegates[interstitialID];
+		interstitials[interstitialID].delegate =
+		(id<GADInterstitialDelegate>)delegates[interstitialID];
 
-	[GADMAdapterAdColonyInitializer
-	startWithAppID:to_nsstring( adColonyAppID )
-	      andZones:@[to_nsstring( adColonyZoneID )]
-	   andCustomID:to_nsstring( adColonyCustomID )];
+		[((InterstitialDelegate *)delegates[interstitialID])requestNewInterstitial];
+	}
 
-	[((InterstitialDelegate *)delegates[interstitialID])requestNewDeathInterstitial];
-}
+	if ( bottomBannerUnitID.size() > 0 ) {
+		NSString *bottomID = to_nsstring( bottomBannerUnitID );
 
-void _sessionStart()
-{
-}
+		banners[bottomID] = [[GADBannerView alloc]
+		initWithAdSize:[BannerViewDelegate GADAdSizeForMKBannerSize:bottomBannerSize]];
 
-void _sessionEnd()
-{
-}
+		delegates[bottomID] =
+		[[BannerViewDelegate alloc] initWithAdUnitID:bottomID
+		                                     forSize:bottomBannerSize
+		                              andTestDevices:ns_testingDevices];
 
-void _preloadAd( const AdType & )
-{
-	// Nothing to do here as Admob handles everything via delegate calls and
-	// init method.
+		banners[bottomID].delegate = (id<GADBannerViewDelegate>)delegates[bottomID];
+		banners[bottomID].rootViewController =
+		[UIApplication sharedApplication].keyWindow.rootViewController;
+	}
+
+	if ( topBannerUnitID.size() > 0 ) {
+		NSString *topID = to_nsstring( topBannerUnitID );
+
+		banners[topID] = [[GADBannerView alloc]
+		initWithAdSize:[BannerViewDelegate GADAdSizeForMKBannerSize:topBannerSize]];
+
+		delegates[topID] = [[BannerViewDelegate alloc] initWithAdUnitID:topID
+		                                                        forSize:topBannerSize
+		                                                 andTestDevices:ns_testingDevices];
+
+		banners[topID].delegate = (id<GADBannerViewDelegate>)delegates[topID];
+		banners[topID].rootViewController =
+		[UIApplication sharedApplication].keyWindow.rootViewController;
+	}
+
+	if ( videoRewardUnitID.size() > 0 ) {
+
+		NSString *videoRewardID = to_nsstring( videoRewardUnitID );
+
+
+		delegates[videoRewardID] = [[RewardVideoDelegate alloc] initWithAdUnitID:videoRewardID
+		                                                             andCallback:nil];
+
+		[GADMAdapterAdColonyInitializer
+		startWithAppID:to_nsstring( adColonyAppID )
+		      andZones:@[to_nsstring( adColonyZoneID )]
+		   andCustomID:to_nsstring( adColonyCustomID )];
+	}
 }
 
 void _showInterstitial( std::string adUnitID )
@@ -211,14 +334,55 @@ bool videoRewardsAvailable()
 
 void _showTopBanner( std::string adUnitID )
 {
-#pragma unused( adUnitID )
-	assert( "Not implemented yet" );
+	auto view = [UIApplication sharedApplication].keyWindow.rootViewController.view;
+
+	for ( UIView *subview in view.subviews ) {
+		if ( [subview isKindOfClass:GADBannerView.class] ) {
+			MK::Log::warning(
+			"Trying to show a top banner view when a banner view "
+			"is already visible. Call ignored." );
+			return;
+		}
+	}
+
+
+	[((BannerViewDelegate *)delegates[to_nsstring( adUnitID )])requestNewBanner];
+
+	auto banner = banners[to_nsstring( adUnitID )];
+	[view addSubview:banner];
 }
 
 void _showBottomBanner( std::string adUnitID )
 {
-#pragma unused( adUnitID )
-	assert( "Not implemented yet" );
+	MK::Log::nonCriticalCrash( "Method _showBottomBanner not implemented yet" );
+
+	/*
+	auto view = [UIApplication
+	sharedApplication].keyWindow.rootViewController.view;
+
+	for ( UIView *subview in view.subviews ) {
+	    if ( [subview isKindOfClass:GADBannerView.class] ) {
+	        MK::Log::warning(
+	        "Trying to show a top banner view when a banner view "
+	        "is already visible. Call ignored." );
+	        return;
+	    }
+	}
+
+	[((BannerViewDelegate *)delegates[to_nsstring( adUnitID
+	)])requestNewBanner];
+
+	auto banner = banners[to_nsstring( adUnitID )];
+
+	CGFloat screen_height = view.bounds.size.height;
+	CGFloat banner_height = banner.bounds.size.height;
+
+	banner.bounds = CGRectMake( banner.bounds.origin.x, screen_height -
+	banner_height,
+	                            banner.bounds.size.width, banner_height );
+
+	[view addSubview:banner];
+	 */
 }
 
 }; // namespace AdKit

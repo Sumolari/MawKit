@@ -16,6 +16,10 @@ namespace MK {
 namespace AdKit {
 
 void _init( std::string interstitialUnitID,
+            std::string bottomBannerUnitID,
+            BannerSize bottomBannerSize,
+            std::string topBannerUnitID,
+            BannerSize topBannerSize,
             std::string videoRewardUnitID,
             std::string adColonyAppID,
             std::string adColonyZoneID,
@@ -24,6 +28,10 @@ void _init( std::string interstitialUnitID,
             testingDevices )
 {
 #pragma unused( interstitialUnitID )
+#pragma unused( bottomBannerUnitID )
+#pragma unused( bottomBannerSize )
+#pragma unused( topBannerUnitID )
+#pragma unused( topBannerSize )
 #pragma unused( videoRewardUnitID )
 #pragma unused( adColonyAppID )
 #pragma unused( adColonyZoneID )

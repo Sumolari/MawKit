@@ -20,6 +20,10 @@ namespace MK {
 namespace AdKit {
 
 void init( std::string interstitialUnitID,
+           std::string bottomBannerUnitID,
+           BannerSize bottomBannerSize,
+           std::string topBannerUnitID,
+           BannerSize topBannerSize,
            std::string videoRewardUnitID,
            std::string adColonyAppID,
            std::string adColonyZoneID,
@@ -29,44 +33,9 @@ void init( std::string interstitialUnitID,
 {
 	if ( !enabled() ) return;
 
-	_init( interstitialUnitID, videoRewardUnitID, adColonyAppID, adColonyZoneID,
-	       adColonyCustomID, testingDevices );
-}
-
-void sessionStart()
-{
-	if ( !enabled() ) return;
-
-	_sessionStart();
-}
-
-void sessionEnd()
-{
-	if ( !enabled() ) return;
-
-	_sessionEnd();
-}
-
-void preloadAd( const AdType &type )
-{
-	if ( !enabled() ) return;
-
-	switch ( type ) {
-	case AdType::Interstitial:
-		if ( Interstitial::DISABLE ) return;
-		break;
-	case AdType::TopBanner:
-		if ( TopBanner::DISABLE ) return;
-		break;
-	case AdType::BottomBanner:
-		if ( BottomBanner::DISABLE ) return;
-		break;
-	case AdType::VideoReward:
-		if ( !videoRewardsAvailable() ) return;
-		break;
-	}
-
-	_preloadAd( type );
+	_init( interstitialUnitID, bottomBannerUnitID, bottomBannerSize,
+	       topBannerUnitID, topBannerSize, videoRewardUnitID, adColonyAppID,
+	       adColonyZoneID, adColonyCustomID, testingDevices );
 }
 
 void showInterstitial( std::string adUnitID )
