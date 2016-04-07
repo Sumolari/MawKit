@@ -1,0 +1,35 @@
+//
+//  Device.mm
+//  Maw Kit
+//
+//  Created by Lluís Ulzurrun de Asanza Sàez on 18/02/16.
+//
+//
+
+#include "../../Device.hpp"
+
+#import <Foundation/Foundation.h>
+#import <Reachability/Reachability.h>
+
+namespace MK {
+
+namespace Device {
+
+const bool isInternetAvailable()
+{
+	return [[Reachability reachabilityForInternetConnection] isReachable];
+}
+
+const bool isUsingWifi()
+{
+	return [[Reachability reachabilityForInternetConnection] isReachableViaWiFi];
+}
+
+const bool isUsingCellularData()
+{
+	return [[Reachability reachabilityForInternetConnection] isReachableViaWWAN];
+}
+
+}; // namespace Device
+
+}; // namespace MK
