@@ -12,8 +12,6 @@
 #include "Features.hpp"
 #include "KVDatabase.hpp"
 
-#include "../Constants/features.h"
-
 #include "AppDelegate.h"
 
 #include <functional>
