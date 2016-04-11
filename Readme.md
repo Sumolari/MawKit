@@ -6,8 +6,8 @@
 
 - **Leaderboards and achievements:** Game Center (iOS, OS X) / Google Play Games (Android).
 - **In-app purchases:** App Store (iOS, OS X), Google Play (Android).
-- **Ads:** AdMob (iOS, Android, not supported on OS X).
-- **Analytics:** Fabric (iOS, Android, OS X) and MixPanel (iOS, Android).
+- **Ads:** AdMob and AdColony (iOS, Android, not supported on OS X).
+- **Analytics:** Fabric (iOS, Android, OS X) and MixPanel (iOS).
 - **Mathematical utilities:** ranges, random number generator.
 
 ## Installation
@@ -33,6 +33,18 @@
   - `pod 'SecureNSUserDefaults'`
   - `pod 'Fabric'                # Fabric`
   - `pod 'Crashlytics'           # Fabric`
+1. Open Xcode project and locate `Build Settings` tab of **iOS** target:
+  1. Look for `GCC_PREPROCESSOR_DEFINITIONS` and prepend `$(inherited)` for release and debug build.
+  1. Look for `LIBRARY_SEARCH_PATHS`, prepend `$(inherited)` and append `$(PROJECT_DIR)/../Classes/MawKit/Apple/iOS` for release and debug build.
+  1. Look for `OTHER_LDFLAGS` and prepend `$(inherited)` for release and debug build.
+1. Open Xcode project and locate `Build Settings` tab of **OS X** target:
+  1. Look for `GCC_PREPROCESSOR_DEFINITIONS` and prepend `$(inherited)` for release and debug build.
+  1. Look for `LIBRARY_SEARCH_PATHS` and prepend `$(inherited)` for release and debug build.
+  1. Look for `OTHER_LDFLAGS` and prepend `$(inherited)` for release and debug build.
+1. Run `pod install` to install pods.
+1. Add `Game Center` and `In-App Purchase` capabilities on both iOS and OS X.
+1. Add `Examples/ios_ids.plist` and `Examples/mac_ids.plist` to `Resources` folder. Don't forget to add it in Xcode so it gets bundled.
+1. Add `Examples/MKConstants.h` and `Examples/MKUtils.cpp` to project. `MKUtils.cpp` should be added to iOS and OS X targets.
 1. Set up and fix **Fabric** for iOS and OS X. This is required as `Fabric.framework` is different for iOS and OS X and Fabric's app does not support multiplatform targets by default. Fix is as easy as getting both versions and storing them at different paths. This can be done with the two following steps:
   1. Follow **Fabric** instructions to set up Fabric for **iOS** target. When finished you'll have a `Fabric.framework` folder inside `proj.ios_mac`. You'll have to move it to `proj.ios_mac/iOS` subfolder and update Xcode project to reflect the change.
   1. Follow **Fabric** instructions again to set up Fabric for **OS X** target. When finished you'll have a `Fabric.framework` folder inside `proj.ios_mac`. You'll have to move it to `proj.ios_mac/osx` subfolder and update Xcode project to reflect the change. 
@@ -48,6 +60,26 @@ Everything defined and implemented by **MawKit** can be found on `MK` namespace.
 
 ### GameKit
 
+To do...
+
 ### in-App purchases
 
+To do...
+
 ### KVDatabase
+
+To do...
+
+### Mathematical utilities
+
+To do...
+
+```
+auto range = MK::Range<int>(10, 20);
+MK::Log::debug(
+	"Random number in [%d, %d] range: %d",
+	range.first(),
+	range.last(), 
+	range.randomInteger()
+);
+```
