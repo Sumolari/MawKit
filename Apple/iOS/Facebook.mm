@@ -31,9 +31,12 @@ void sendInvitation( const std::string &linkURL, const std::string &thumbnailURL
 
 	content.appInvitePreviewImageURL = [NSURL URLWithString:to_nsstring( thumbnailURL )];
 
-	[FBSDKAppInviteDialog showFromViewController:appController.viewController
-	                                 withContent:content
-	                                    delegate:appController];
+	if ( [appController conformsToProtocol:@protocol( FBSDKAppInviteDialogDelegate )] ) {
+		[FBSDKAppInviteDialog
+		showFromViewController:appController.viewController
+		           withContent:content
+		              delegate:(id<FBSDKAppInviteDialogDelegate>)appController];
+	}
 }
 
 const bool enabled()
