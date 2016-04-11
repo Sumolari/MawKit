@@ -14,6 +14,7 @@
 #include "cocos2d.h"
 #include "platform/android/jni/JniHelper.h"
 #include <jni.h>
+#include <vector>
 
 /**
  *  ID of Admob's interstitial to show on death.
@@ -39,6 +40,8 @@
 namespace MK {
 namespace AdKit {
 
+std::vector<std::function<void( bool )>> rewardCallbacks;
+
 void _init()
 {
 	cocos2d::log( "Initialized AdKit for Android." );
@@ -61,6 +64,7 @@ void _preloadAd( const AdType &type )
 
 void _showInterstitial()
 {
+	cocos2d::log( "Called AdKit showInterstitial() for Android" );
 	cocos2d::JniMethodInfo t;
 	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "showInterstitial",
 	                                              "()V" ) ) {
@@ -77,6 +81,50 @@ void _showTopBanner()
 void _showBottomBanner()
 {
 	cocos2d::log( "Called Adkit showBottomBanner() for Android" );
+}
+
+void _showVideoReward( std::function<void( bool )> callback )
+{
+	cocos2d::log( "Called Adkit showVideoReward() for Android" );
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY,
+	                                              "showRewarded", "()V" ) ) {
+		rewardCallbacks.push_back( callback );
+
+		t.env->CallStaticVoidMethod( t.classID, t.methodID );
+		t.env->DeleteLocalRef( t.classID );
+	}
+}
+
+bool videoRewardsAvailable()
+{
+	cocos2d::log( "Called Adkit videoRewardsAvailable() for Android" );
+	if ( !MK::AdKit::enabled() ) return false;
+
+	bool isAvailable = false;
+
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "rewardedAvailable",
+	                                              "()Z" ) ) {
+		isAvailable = t.env->CallStaticBooleanMethod( t.classID, t.methodID );
+		t.env->DeleteLocalRef( t.classID );
+	}
+
+	return isAvailable;
+}
+
+extern "C" {
+JNIEXPORT void JNICALL Java_org_cocos2dx_cpp_AppActivity_callCppRewardCallback(
+JNIEnv *env, jobject thiz, jboolean success );
+};
+
+JNIEXPORT void JNICALL Java_org_cocos2dx_cpp_AppActivity_callCppRewardCallback(
+JNIEnv *env, jobject thiz, jboolean success )
+{
+	if ( rewardCallbacks.size() > 0 ) {
+		rewardCallbacks[0]( success );
+		rewardCallbacks.erase( rewardCallbacks.begin() );
+	}
 }
 
 }; // namespace AdKit
