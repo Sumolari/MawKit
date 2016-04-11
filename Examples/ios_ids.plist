@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IAP</key>
+	<array>
+		<string>BAG_OF_COINS</string>
+		<string>REMOVE_ADS</string>
+		<string>LE_CONTINUE_PLAYING_TOKEN_5_PACK</string>
+	</array>
+	<key>Leaderboards</key>
+	<array>
+		<string>SCORE</string>
+		<string>COINS</string>
+		<string>CAVE_SCORE</string>
+		<string>RETRO_SCORE</string>
+		<string>JUNGLE_SCORE</string>
+		<string>BROKEN2_SCORE</string>
+		<string>PIPES_SCORE</string>
+		<string>ICE_SCORE</string>
+		<string>CITY_SCORE</string>
+		<string>PAGODA_SCORE</string>
+		<string>BEST_SCORE</string>
+	</array>
+	<key>Achievements</key>
+	<array>
+		<string>RETRO_SKIN_BOUGHT</string>
+		<string>JUNGLE_SKIN_BOUGHT</string>
+		<string>REMOVE_ADS_BOUGHT</string>
+		<string>MAGMA_STARTED_MOVING</string>
+		<string>HARD_DIFFICULTY_REACHED</string>
+		<string>IMPOSSIBLE_DIFFICULTY_REACHED</string>
+		<string>A_HUNDRED_THOUSAND_COINS_GATHERED</string>
+		<string>A_HUNDRED_POINTS_SCORE</string>
+		<string>TEN_DEATHS_BY_MAGMA</string>
+		<string>TEN_DEATHS_BY_SPIKY_TOP_TO_BOTTOM</string>
+		<string>TEN_DEATHS_BY_SPIKY_BOTTOM_TO_TOP</string>
+		<string>BROKEN2_SKIN_BOUGHT</string>
+		<string>PIPES_SKIN_BOUGHT</string>
+		<string>SILVER_COIN_PICKED_UP</string>
+		<string>GOLD_COIN_PICKED_UP</string>
+		<string>DIAMOND_COIN_PICKED_UP</string>
+		<string>MUTE</string>
+		<string>ICE_SKIN_BOUGHT</string>
+		<string>CITY_SKIN_BOUGHT</string>
+		<string>PAGODA_SKIN_BOUGHT</string>
+	</array>
+</dict>
+</plist>

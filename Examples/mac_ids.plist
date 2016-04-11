@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IAP</key>
+	<array>
+		<string>LE_OSX_BAG_OF_COINS</string>
+		<string>LE_OSX_REMOVE_ADS</string>
+		<string>LE_OSX_CONTINUE_PLAYING_TOKEN_5_PACK</string>
+	</array>
+	<key>Leaderboards</key>
+	<array>
+		<string>LE_OSX_SCORE</string>
+		<string>LE_OSX_COINS</string>
+		<string>LE_OSX_CAVE_SCORE</string>
+		<string>LE_OSX_RETRO_SCORE</string>
+		<string>LE_OSX_JUNGLE_SCORE</string>
+		<string>LE_OSX_BROKEN2_SCORE</string>
+		<string>LE_OSX_PIPES_SCORE</string>
+		<string>LE_OSX_ICE_SCORE</string>
+		<string>LE_OSX_CITY_SCORE</string>
+		<string>LE_OSX_PAGODA_SCORE</string>
+		<string>LE_OSX_BEST_SCORE</string>
+	</array>
+	<key>Achievements</key>
+	<array>
+		<string>LE_OSX_RETRO_SKIN_BOUGHT</string>
+		<string>LE_OSX_JUNGLE_SKIN_BOUGHT</string>
+		<string>LE_OSX_REMOVE_ADS_BOUGHT</string>
+		<string>LE_OSX_MAGMA_STARTED_MOVING</string>
+		<string>LE_OSX_HARD_DIFFICULTY_REACHED</string>
+		<string>LE_OSX_IMPOSSIBLE_DIFFICULTY_REACHED</string>
+		<string>LE_OSX_A_HUNDRED_THOUSAND_COINS_GATHERED</string>
+		<string>LE_OSX_A_HUNDRED_POINTS_SCORE</string>
+		<string>LE_OSX_TEN_DEATHS_BY_MAGMA</string>
+		<string>LE_OSX_TEN_DEATHS_BY_SPIKY_TOP_TO_BOTTOM</string>
+		<string>LE_OSX_TEN_DEATHS_BY_SPIKY_BOTTOM_TO_TOP</string>
+		<string>LE_OSX_BROKEN2_SKIN_BOUGHT</string>
+		<string>LE_OSX_PIPES_SKIN_BOUGHT</string>
+		<string>LE_OSX_SILVER_COIN_PICKED_UP</string>
+		<string>LE_OSX_GOLD_COIN_PICKED_UP</string>
+		<string>LE_OSX_DIAMOND_COIN_PICKED_UP</string>
+		<string>LE_OSX_MUTE</string>
+		<string>LE_OSX_ICE_SKIN_BOUGHT</string>
+		<string>LE_OSX_CITY_SKIN_BOUGHT</string>
+		<string>LE_OSX_PAGODA_SKIN_BOUGHT</string>
+	</array>
+</dict>
+</plist>
