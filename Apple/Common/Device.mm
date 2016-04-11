@@ -30,6 +30,12 @@ const bool isUsingCellularData()
 	return [[Reachability reachabilityForInternetConnection] isReachableViaWWAN];
 }
 
+const std::string language()
+{
+	return std::string(
+	[[NSLocale preferredLanguages][0] substringToIndex:2].lowercaseString.UTF8String );
+}
+
 }; // namespace Device
 
 }; // namespace MK

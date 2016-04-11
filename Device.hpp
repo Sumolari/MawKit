@@ -111,6 +111,13 @@ const bool isUsingWifi();
  */
 const bool isUsingCellularData();
 
+/**
+ *  Returns this device's language code.
+ *
+ *  @return This device's language code.
+ */
+const std::string language();
+
 }; // namespace Device
 
 }; // namespace MK
