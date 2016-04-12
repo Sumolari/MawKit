@@ -81,7 +81,7 @@ const long long keepMaxLongValueForKey( const std::string &key, const long long 
 {
 	return storeApplyingBinaryOperationAndReturningPreviousValue(
 	key, proposedValue, []( const long long prev, const long long value ) {
-		return MAX( prev, value );
+		return std::max( prev, value );
 	} );
 }
 
@@ -89,7 +89,7 @@ const long long keepMinLongValueForKey( const std::string &key, const long long 
 {
 	return storeApplyingBinaryOperationAndReturningPreviousValue(
 	key, proposedValue, []( const long long prev, const long long value ) {
-		return MIN( prev, value );
+		return std::min( prev, value );
 	} );
 }
 

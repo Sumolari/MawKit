@@ -42,7 +42,16 @@ namespace AdKit {
 
 std::vector<std::function<void( bool )>> rewardCallbacks;
 
-void _init()
+void _init( std::string interstitialUnitID,
+            std::string bottomBannerUnitID,
+            BannerSize bottomBannerSize,
+            std::string topBannerUnitID,
+            BannerSize topBannerSize,
+            std::string videoRewardUnitID,
+            std::string adColonyAppID,
+            std::string adColonyZoneID,
+            std::string adColonyCustomID,
+            std::vector<std::string> testingDevices )
 {
 	cocos2d::log( "Initialized AdKit for Android." );
 }
@@ -57,12 +66,7 @@ void _sessionEnd()
 	cocos2d::log( "Called Adkit sessionEnd() for Android" );
 }
 
-void _preloadAd( const AdType &type )
-{
-	cocos2d::log( "Called Adkit preloadAd() for Android" );
-}
-
-void _showInterstitial()
+void _showInterstitial( std::string adUnitID )
 {
 	cocos2d::log( "Called AdKit showInterstitial() for Android" );
 	cocos2d::JniMethodInfo t;
@@ -73,17 +77,17 @@ void _showInterstitial()
 	}
 }
 
-void _showTopBanner()
+void _showTopBanner( std::string adUnitID )
 {
 	cocos2d::log( "Called Adkit showTopBanner() for Android" );
 }
 
-void _showBottomBanner()
+void _showBottomBanner( std::string adUnitID )
 {
 	cocos2d::log( "Called Adkit showBottomBanner() for Android" );
 }
 
-void _showVideoReward( std::function<void( bool )> callback )
+void _showVideoReward( std::string adUnitID, std::function<void( bool )> callback )
 {
 	cocos2d::log( "Called Adkit showVideoReward() for Android" );
 	cocos2d::JniMethodInfo t;
