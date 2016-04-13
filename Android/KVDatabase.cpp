@@ -16,7 +16,7 @@ namespace KVDatabase {
 
 const std::string setStringValueForKey( const std::string &key, const std::string &value )
 {
-	// cocos2d::log("Called KVDatabase setStringValueForKey() for Android");
+	cocos2d::log( "Called KVDatabase setStringValueForKey() for Android" );
 	std::string prevValue =
 	cocos2d::UserDefault::getInstance()->getStringForKey( key.c_str(), "" );
 
@@ -29,7 +29,7 @@ const std::string setStringValueForKey( const std::string &key, const std::strin
 // WARNING precision loss
 const long long setLongValueForKey( const std::string &key, const long long value )
 {
-	// cocos2d::log("Called KVDatabase setLongValueForKey() for Android");
+	cocos2d::log( "Called KVDatabase setLongValueForKey() for Android" );
 	long long prevValue =
 	cocos2d::UserDefault::getInstance()->getIntegerForKey( key.c_str(), 0 );
 
@@ -41,21 +41,26 @@ const long long setLongValueForKey( const std::string &key, const long long valu
 
 const std::string getStringValueForKey( const std::string &key )
 {
-	// cocos2d::log("Called KVDatabase getStringValueForKey() for Android");
+	cocos2d::log( "Called KVDatabase getStringValueForKey() for Android" );
 	return cocos2d::UserDefault::getInstance()->getStringForKey( key.c_str(), "" );
 }
 
 // WARNING precision loss
 const long long getLongValueForKey( const std::string &key )
 {
-	// cocos2d::log("Called KVDatabase getLongValueForKey() for Android");
+	cocos2d::log( "Called KVDatabase getLongValueForKey() for Android" );
 	return cocos2d::UserDefault::getInstance()->getIntegerForKey( key.c_str(), 0 );
 }
 
 const std::vector<std::string> storedKeys()
 {
-	// cocos2d::log("Called KVDatabase storedKeys() for Android");
+	cocos2d::log( "Called KVDatabase storedKeys() for Android" );
 	return std::vector<std::string>();
+}
+
+void forcedWriteDisk()
+{
+	cocos2d::log( "Called KVDatabase forcedWriteDisk() for Android" );
 }
 
 }; // namespace KVDatabase

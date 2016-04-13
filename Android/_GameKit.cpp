@@ -25,6 +25,7 @@ namespace GameKit {
 
 std::map<int, std::vector<VoidLongLongBoolCB>> scoreCallbacks;
 std::map<int, std::vector<std::function<void( float, bool )>>> achievementCallbacks;
+std::map<int, std::vector<std::function<void( std::map<std::string, unsigned long long>, bool )>>> friendScoreCallbacks;
 
 void _init()
 {
@@ -32,67 +33,59 @@ void _init()
 
 void _requestScore( int leaderboardID, VoidLongLongBoolCB callback )
 {
-	if ( isAvailable() ) {
-		cocos2d::JniMethodInfo t;
-		if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "requestScoreFromLeaderboard",
-		                                              "(I)V" ) ) {
-			t.env->CallStaticVoidMethod( t.classID, t.methodID, leaderboardID );
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY,
+	                                              "requestScoreFromLeaderboard", "(I)V" ) ) {
+		scoreCallbacks[leaderboardID].push_back( callback );
 
-			scoreCallbacks[leaderboardID].push_back( callback );
-		}
-		else {
-			callback( 0, false );
-		}
+		t.env->CallStaticVoidMethod( t.classID, t.methodID, leaderboardID );
 	}
 	else {
 		callback( 0, false );
 	}
 }
 
-void _submitScore( long long score, int leaderboardID )
+void _requestFriendsScores( int leaderboardID,
+                            std::function<void( std::map<std::string, unsigned long long>, bool )> callback )
 {
-	if ( isAvailable() ) {
-		cocos2d::JniMethodInfo t;
-		if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "submitScoreToLeaderboard",
-		                                              "(II)V" ) ) {
-			t.env->CallStaticVoidMethod( t.classID, t.methodID, score, leaderboardID );
-		}
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "requestFriendScoresFromLeaderboard",
+	                                              "(I)V" ) ) {
+		friendScoreCallbacks[leaderboardID].push_back( callback );
+
+		t.env->CallStaticVoidMethod( t.classID, t.methodID, leaderboardID );
+	}
+	else {
+		callback( std::map<std::string, unsigned long long>(), false );
 	}
 }
 
-void _showLeaderboard( const int leaderbaordID )
+void _submitScore( long long score, int leaderboardID )
 {
-	if ( isAvailable() ) {
-		cocos2d::JniMethodInfo t;
-		if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "openLeaderboardUI",
-		                                              "(I)V" ) ) {
-			t.env->CallStaticVoidMethod( t.classID, t.methodID, leaderbaordID );
-		}
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY,
+	                                              "submitScoreToLeaderboard", "(JI)V" ) ) {
+		t.env->CallStaticVoidMethod( t.classID, t.methodID, score, leaderboardID );
 	}
-	else {
-		// cocos2d::log( "Log in before opening leaderboard" );
-		// Attempt GPG login
-		cocos2d::JniMethodInfo t;
-		if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "attemptGPGLogin",
-		                                              "()V" ) ) {
-			t.env->CallStaticVoidMethod( t.classID, t.methodID );
-		}
+}
+
+void _showLeaderboard( const int leaderboardID )
+{
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "openLeaderboardUI",
+	                                              "(I)V" ) ) {
+		t.env->CallStaticVoidMethod( t.classID, t.methodID, leaderboardID );
 	}
 }
 
 void _requestAchievement( const int achievementID, std::function<void( float, bool )> callback )
 {
-	if ( isAvailable() ) {
-		cocos2d::JniMethodInfo t;
-		if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "requestAchievement",
-		                                              "(I)V" ) ) {
-			t.env->CallStaticVoidMethod( t.classID, t.methodID, achievementID );
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "requestAchievement",
+	                                              "(I)V" ) ) {
+		achievementCallbacks[achievementID].push_back( callback );
 
-			achievementCallbacks[achievementID].push_back( callback );
-		}
-		else {
-			callback( 0.0f, false );
-		}
+		t.env->CallStaticVoidMethod( t.classID, t.methodID, achievementID );
 	}
 	else {
 		callback( 0.0f, false );
@@ -101,33 +94,20 @@ void _requestAchievement( const int achievementID, std::function<void( float, bo
 
 void _reportAchievementProgress( int aID, float progress )
 {
-	if ( isAvailable() ) {
-		cocos2d::JniMethodInfo t;
-		if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "updateAchievement",
-		                                              "(II)V" ) ) {
-			t.env->CallStaticVoidMethod( t.classID, t.methodID, aID,
-			                             static_cast<int>( progress * 100 ) );
-		}
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "updateAchievement",
+	                                              "(II)V" ) ) {
+		t.env->CallStaticVoidMethod( t.classID, t.methodID, aID,
+		                             static_cast<int>( progress * 100 ) );
 	}
 }
 
 void showAchievementsList()
 {
-	if ( isAvailable() ) {
-		cocos2d::JniMethodInfo t;
-		if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "showAchievements",
-		                                              "()V" ) ) {
-			t.env->CallStaticVoidMethod( t.classID, t.methodID );
-		}
-	}
-	else {
-		// cocos2d::log( "Log in before opening achievements" );
-		// Attempt GPG login
-		cocos2d::JniMethodInfo t;
-		if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "attemptGPGLogin",
-		                                              "()V" ) ) {
-			t.env->CallStaticVoidMethod( t.classID, t.methodID );
-		}
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "showAchievements",
+	                                              "()V" ) ) {
+		t.env->CallStaticVoidMethod( t.classID, t.methodID );
 	}
 }
 
@@ -140,14 +120,7 @@ const bool _signInPlayer()
 
 void exitGame()
 {
-	cocos2d::JniMethodInfo t;
-	// TODO fix this aberration
-	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY,
-	                                              "exitGame", "()V" ) ) {
-		t.env->CallStaticVoidMethod( t.classID, t.methodID );
-	}
-
-	// Director::getInstance()->end();
+	cocos2d::Director::getInstance()->end();
 }
 
 const bool isAvailable()
@@ -156,7 +129,7 @@ const bool isAvailable()
 
 	cocos2d::JniMethodInfo t;
 	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY,
-	                                              "isGPGSupported", "()Z" ) ) {
+	                                              "isSignedIn", "()Z" ) ) {
 		tmp = t.env->CallStaticBooleanMethod( t.classID, t.methodID );
 	}
 
@@ -165,13 +138,13 @@ const bool isAvailable()
 
 extern "C" {
 JNIEXPORT void JNICALL Java_org_cocos2dx_cpp_AppActivity_callCppScoreCallback(
-JNIEnv *env, jobject thiz, jint id, jint score, jboolean success );
+JNIEnv *env, jobject thiz, jint id, jlong score, jboolean success );
 };
 
 JNIEXPORT void JNICALL Java_org_cocos2dx_cpp_AppActivity_callCppScoreCallback(
-JNIEnv *env, jobject thiz, jint id, jint score, jboolean success )
+JNIEnv *env, jobject thiz, jint id, jlong score, jboolean success )
 {
-	int newScore = score;
+	long long newScore = score;
 	MK::Log::debug( "Retrieved score from leaderboard %d: %d", id, newScore );
 
 	for ( auto callback : scoreCallbacks[id] ) {
@@ -179,6 +152,32 @@ JNIEnv *env, jobject thiz, jint id, jint score, jboolean success )
 	}
 
 	scoreCallbacks[id].clear();
+}
+
+extern "C" {
+JNIEXPORT void JNICALL Java_org_cocos2dx_cpp_AppActivity_callCppFriendScoreCallback(
+JNIEnv *env, jobject thiz, jint id, jobjectArray names, jlongArray scores, jboolean success );
+};
+
+JNIEXPORT void JNICALL Java_org_cocos2dx_cpp_AppActivity_callCppFriendScoreCallback(
+JNIEnv *env, jobject thiz, jint id, jobjectArray names, jlongArray scores, jboolean success )
+{
+	std::map<std::string, unsigned long long> friendScores;
+	int namesCount   = env->GetArrayLength( names );
+	long long *score = env->GetLongArrayElements( scores, NULL );
+
+	for ( int i = 0; i < namesCount; i++ ) {
+		jstring jname    = (jstring)env->GetObjectArrayElement( names, i );
+		std::string name = env->GetStringUTFChars( jname, NULL );
+
+		friendScores[name] = static_cast<unsigned long long>( score[i] );
+	}
+
+	for ( auto callback : friendScoreCallbacks[id] ) {
+		callback( friendScores, success );
+	}
+
+	friendScoreCallbacks.clear();
 }
 
 extern "C" {

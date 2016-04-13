@@ -8,6 +8,8 @@
 
 #include "InfiniteParallaxNode.hpp"
 
+#include <cstdio>
+
 namespace MK {
 
 typedef InfiniteParallaxNode Self;

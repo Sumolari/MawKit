@@ -31,9 +31,7 @@ const std::string UUID()
 
 const cocos2d::Size screenSize()
 {
-	// Shouldn't be called on Android
-	assert( false );
-	return cocos2d::Size( 1080, 1920 /*size.width, size.height*/ );
+	return cocos2d::Director::getInstance()->getOpenGLView()->getFrameSize();
 }
 
 const cocos2d::Size pxScreenSize()
