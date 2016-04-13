@@ -43,6 +43,10 @@
   1. Look for `OTHER_LDFLAGS` and prepend `$(inherited)` for release and debug build.
 1. Run `pod install` to install pods.
 1. Add `Game Center` and `In-App Purchase` capabilities on both iOS and OS X.
+1. Import `MawKit` folder in Xcode.
+1. Remove `MawKit/Android` and `MawKit/Example` folders from Xcode project.
+1. Check files `.mm` and `.a` files in `MawKit/Apple/iOS` so they are only build on iOS target.
+1. Check files `.mm` files in `MawKit/Apple/OS X` so they are only build on OS X target.
 1. Add `Examples/ios_ids.plist` and `Examples/mac_ids.plist` to `Resources` folder. Don't forget to add it in Xcode so it gets bundled.
 1. Add `Examples/MKConstants.h` and `Examples/MKUtils.cpp` to project. `MKUtils.cpp` should be added to iOS and OS X targets.
 1. Set up and fix **Fabric** for iOS and OS X. This is required as `Fabric.framework` is different for iOS and OS X and Fabric's app does not support multiplatform targets by default. Fix is as easy as getting both versions and storing them at different paths. This can be done with the two following steps:
