@@ -112,6 +112,20 @@ const bool isUsingWifi();
 const bool isUsingCellularData();
 
 /**
+ *  Returns whether this device has an accelerometer and is usable or not.
+ *
+ *  @return `true` if this device has an accelerometer and can be used.
+ */
+const bool hasAccelerometer();
+
+/**
+ *  Returns whether this device has a gyroscope and is usable or not.
+ *
+ *  @return `true` if this device has a gyroscope and can be used.
+ */
+const bool hasGyroscope();
+
+/**
  *  Returns this device's language code.
  *
  *  @return This device's language code.

@@ -8,6 +8,7 @@
 
 #include "../../Device.hpp"
 
+#include <CoreMotion/CoreMotion.h>
 #include <Foundation/Foundation.h>
 #include <OpenGLES/EAGL.h>
 #include <UIKit/UIKit.h>
@@ -58,11 +59,22 @@ const bool hasPowerfulHardware()
 		         [[UIScreen mainScreen] scale] >= 2 );
 	case UIUserInterfaceIdiomTV:
 	case UIUserInterfaceIdiomUnspecified:
-    case UIUserInterfaceIdiomCarPlay:
+	case UIUserInterfaceIdiomCarPlay:
 		return false;
 	}
 }
 
+const bool hasAccelerometer()
+{
+	static CMMotionManager *manager = [[CMMotionManager alloc] init];
+	return [manager isAccelerometerAvailable];
+}
+
+const bool hasGyroscope()
+{
+	static CMMotionManager *manager = [[CMMotionManager alloc] init];
+	return [manager isGyroAvailable];
+}
 
 }; // namespace Device
 }; // namespace MK

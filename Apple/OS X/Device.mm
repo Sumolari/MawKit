@@ -99,5 +99,15 @@ const bool hasPowerfulHardware()
 	return true;
 }
 
+const bool hasAccelerometer()
+{
+	return false;
+}
+
+const bool hasGyroscope()
+{
+	return false;
+}
+
 }; // namespace Device
 }; // namespace MK
