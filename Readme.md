@@ -1,4 +1,4 @@
-![MawKit](https://cloud.githubusercontent.com/assets/779767/14518595/30e76228-0219-11e6-893a-449105270b9f.png "MawKit")
+![MawKit](https://cloud.githubusercontent.com/assets/779767/14518784/8d177078-021a-11e6-9127-4597fda2b8f7.png "MawKit")
 
 **MawKit** is a library built on top of Cocos2d-x offering useful cross-platform utilities to implement platform-specific features like *leaderboards*, *achievements*, or *in-app purchases* quickly.
 
