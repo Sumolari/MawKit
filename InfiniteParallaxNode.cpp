@@ -50,7 +50,7 @@ void Self::addLayer( cocos2d::Sprite *node, int localZOrder, cocos2d::Vec2 veloc
 		constexpr const float CALLBACK_CALL_PERIOD = 1.0;
 
 		std::function<void( float )> callback_x_axis =
-		[&, leftNode, rightNode, node, velocity, CALLBACK_CALL_PERIOD]( float dt ) {
+		[&, leftNode, rightNode, node, velocity, CALLBACK_CALL_PERIOD]( float ) {
 
 			auto distances = velocity * CALLBACK_CALL_PERIOD;
 
@@ -116,7 +116,7 @@ void Self::addLayer( cocos2d::Sprite *node, int localZOrder, cocos2d::Vec2 veloc
 		constexpr const float CALLBACK_CALL_PERIOD = 1.0;
 
 		std::function<void( float )> callback_y_axis =
-		[&, topNode, bottomNode, node, velocity, CALLBACK_CALL_PERIOD]( float dt ) {
+		[&, topNode, bottomNode, node, velocity, CALLBACK_CALL_PERIOD]( float ) {
 
 			auto distances = velocity * CALLBACK_CALL_PERIOD;
 
