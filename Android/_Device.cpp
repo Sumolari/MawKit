@@ -46,6 +46,11 @@ const bool hasPowerfulHardware()
 	return ( res.width * res.height ) >= HD;
 }
 
+const std::string language()
+{
+	return "es";
+}
+
 }; // namespace Device;
 }; // namespace MK
 

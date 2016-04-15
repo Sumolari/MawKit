@@ -78,6 +78,15 @@ void _showLeaderboard( const int leaderboardID )
 	}
 }
 
+void _showLeaderboards()
+{
+	cocos2d::JniMethodInfo t;
+	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "openLeaderboardsUI",
+	                                              "()V" ) ) {
+		t.env->CallStaticVoidMethod( t.classID, t.methodID );
+	}
+}
+
 void _requestAchievement( const int achievementID, std::function<void( float, bool )> callback )
 {
 	cocos2d::JniMethodInfo t;

@@ -80,6 +80,13 @@ void _submitScore( const long long score, const int leaderboardID );
 void _showLeaderboard( const int leaderbaordID );
 
 /**
+ *  Opens all leaderboards UI.
+ *
+ *  @native
+ */
+void _showLeaderboards();
+
+/**
  *  Reports given progress in achievement with given identifier, unlocking it if
  *  progress is \f$\geq\f$.
  *

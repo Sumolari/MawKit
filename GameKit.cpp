@@ -36,8 +36,7 @@ void requestScore( const LeaderboardIndex &leaderboardID, VoidLongLongBoolCB cal
 }
 
 void requestFriendsScores( const LeaderboardIndex &leaderboardID,
-                           std::function<void( std::map<std::string, unsigned long long>, bool )>
-                           callback )
+                           std::function<void( std::map<std::string, unsigned long long>, bool )> callback )
 {
 	if ( !MK::Features::GameKitLeaderboards ) return;
 
@@ -58,6 +57,13 @@ void showLeaderboard( const LeaderboardIndex &leaderbaordID )
 	_showLeaderboard( int( leaderbaordID ) );
 }
 
+void showLeaderboards()
+{
+	if ( !MK::Features::GameKitLeaderboards ) return;
+
+	_showLeaderboards();
+}
+
 void reportAchievementProgress( const AchievementIndex &achievementID, const float progress )
 {
 	if ( !MK::Features::GameKitAchievements ) return;
@@ -66,7 +72,8 @@ void reportAchievementProgress( const AchievementIndex &achievementID, const flo
 	                            std::min( 1.0, static_cast<double>( progress ) ) );
 }
 
-void requestAchievement( const AchievementIndex &achievementID, std::function<void( float, bool )> callback )
+void requestAchievement( const AchievementIndex &achievementID,
+                         std::function<void( float, bool )> callback )
 {
 	if ( !MK::Features::GameKitAchievements ) return;
 

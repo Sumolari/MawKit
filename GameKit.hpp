@@ -9,9 +9,9 @@
 #ifndef GameKit_hpp
 #define GameKit_hpp
 
+#include <functional>
 #include <map>
 #include <string>
-#include <functional>
 
 namespace MK {
 
@@ -95,6 +95,11 @@ void submitScore( const long long score, const LeaderboardIndex &leaderboardID )
  *  @param leaderbaordID Leaderboard to display.
  */
 void showLeaderboard( const LeaderboardIndex &leaderbaordID );
+
+/**
+ *  Opens all leaderboards UI.
+ */
+void showLeaderboards();
 
 /**
  *  Reports achievement with given identifier and progress, unlocking it if
