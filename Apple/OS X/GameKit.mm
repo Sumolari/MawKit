@@ -105,5 +105,44 @@ const bool _signInPlayer()
 	return player.isAuthenticated;
 }
 
+namespace ReplayKit {
+
+const bool isAvailable()
+{
+	return false;
+}
+
+void startRecording( bool, std::function<void( bool )> callback )
+{
+	if ( callback != nullptr ) {
+		callback( false );
+	}
+}
+
+void stopRecording( std::function<void( bool )> callback )
+{
+	if ( callback != nullptr ) {
+		callback( false );
+	}
+}
+
+void discardRecording( std::function<void( void )> callback )
+{
+	if ( callback != nullptr ) {
+		callback();
+	}
+}
+
+void showLastRecordedReplayEditor()
+{
+}
+
+bool hasRecordedReplay()
+{
+	return false;
+}
+
+}; // namespace ReplayKit
+
 }; // namespace GameKit
 }; // namespace MK
