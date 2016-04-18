@@ -160,7 +160,9 @@ void startRecording( bool microphoneEnabled, std::function<void( bool )> callbac
 		                          }
 
 		                          if ( callback != nullptr ) {
-			                          callback( error == nil );
+			                          [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+				                        callback( error == nil );
+				                      }];
 		                          }
 
 		                        }];
@@ -186,7 +188,9 @@ void stopRecording( std::function<void( bool )> callback )
 		  previewVCDelegate.lastRecordingPreviewVC = previewViewController;
 	  }
 	  if ( callback != nullptr ) {
-		  callback( error == nil && previewViewController != nil );
+		  [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+			callback( error == nil && previewViewController != nil );
+		  }];
 	  }
 	}];
 }
@@ -205,7 +209,9 @@ void discardRecording( std::function<void( void )> callback )
 		[[RPScreenRecorder sharedRecorder] discardRecordingWithHandler:^{
 		}];
 		if ( callback != nullptr ) {
-			callback();
+			[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+			  callback();
+			}];
 		}
 
 	} );
