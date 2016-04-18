@@ -70,17 +70,16 @@ enum class BannerSize {
  *  @param adColonyCustomID   AdColony custom param.
  *  @param testingDevices     List of testing devices.
  */
-void init( std::string interstitialUnitID,
-           std::string bottomBannerUnitID,
-           BannerSize bottomBannerSize,
-           std::string topBannerUnitID,
-           BannerSize topBannerSize,
-           std::string videoRewardUnitID,
-           std::string adColonyAppID,
-           std::string adColonyZoneID,
-           std::string adColonyCustomID,
-           std::vector<std::string>
-           testingDevices );
+void init( std::string interstitialUnitID = "",
+           std::string bottomBannerUnitID = "",
+           BannerSize bottomBannerSize    = BannerSize::SmartBannerPortrait,
+           std::string topBannerUnitID    = "",
+           BannerSize topBannerSize       = BannerSize::SmartBannerPortrait,
+           std::string videoRewardUnitID  = "",
+           std::string adColonyAppID      = "",
+           std::string adColonyZoneID     = "",
+           std::string adColonyCustomID   = "",
+           std::vector<std::string> testingDevices = {} );
 
 /**
  *  Shows an interstitial ad.
