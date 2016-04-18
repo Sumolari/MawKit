@@ -33,6 +33,7 @@ void warning( const char *format, ... )
 
 void debug( const char *format, ... )
 {
+#ifdef COCOS2D_DEBUG
 	va_list args;
 	va_start( args, format );
 	char * final    = new char[cocos2d::MAX_LOG_LENGTH];
@@ -43,6 +44,23 @@ void debug( const char *format, ... )
 	va_end( args );
 	delete[] final;
 	delete[] realFinal;
+#endif
+}
+
+void verbose( const char *format, ... )
+{
+#ifdef COCOS2D_DEBUG
+	va_list args;
+	va_start( args, format );
+	char * final    = new char[cocos2d::MAX_LOG_LENGTH];
+	char *realFinal = new char[cocos2d::MAX_LOG_LENGTH];
+	sprintf( final, "💭 [VBOSE] 💭 %s", format );
+	vsprintf( realFinal, final, args );
+	cocos2d::log( "%s", realFinal );
+	va_end( args );
+	delete[] final;
+	delete[] realFinal;
+#endif
 }
 
 void nonCriticalCrash( const char *format, ... )
