@@ -166,6 +166,11 @@ void MoveToNode::startWithTarget( cocos2d::Node *target )
 void MoveToNode::update( float time )
 {
 	cocos2d::Point finalPosition = this->destinationNode->getPosition();
+	cocos2d::Point anchor        = this->destinationNode->getAnchorPoint();
+	cocos2d::Size size           = this->destinationNode->getContentSize();
+
+	finalPosition += cocos2d::Point( ( 0.5 - anchor.x ) * size.width,
+	                                 ( 0.5 - anchor.y ) * size.height );
 
 	for ( cocos2d::Node *parent     = this->destinationNode->getParent();
 	      parent != nullptr; parent = parent->getParent() ) {
