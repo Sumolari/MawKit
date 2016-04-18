@@ -35,7 +35,7 @@ void _showLeaderboard( int lID )
 {
 	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
-			Log::debug( "Can't open Leaderboard %d as player didn't log in.", lID );
+			Log::verbose( "Can't open Leaderboard %d as player didn't log in.", lID );
 		}
 		else {
 
@@ -63,7 +63,7 @@ void _showLeaderboard( int lID )
 void showAchievementsList()
 {
 	if ( !isAvailable() ) {
-		Log::debug( "Can't open Achievements UI as player didn't log in." );
+		Log::verbose( "Can't open Achievements UI as player didn't log in." );
 	}
 	else {
 		GKGameCenterViewController *gkController =

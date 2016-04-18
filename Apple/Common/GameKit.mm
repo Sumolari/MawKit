@@ -52,7 +52,7 @@ void _requestScore( const int lID, VoidLongLongBoolCB callback )
 {
 	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
-			Log::debug(
+			Log::verbose(
 			"Can't retrieve score from Leaderboard %d as player didn't log in.", lID );
 		}
 		else {
@@ -86,7 +86,7 @@ const int lID, std::function<void( std::map<std::string, unsigned long long>, bo
 {
 	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
-			Log::debug(
+			Log::verbose(
 			"Can't retrieve score from Leaderboard %d as player didn't log in.", lID );
 		}
 		else {
@@ -132,7 +132,7 @@ void _submitScore( const long long score, const int lID )
 {
 	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
-			Log::debug(
+			Log::verbose(
 			"Can't submit score to Leaderboard %d as player didn't log in.", lID );
 		}
 		else {
@@ -163,9 +163,10 @@ void _reportAchievementProgress( const int aID, const float progress )
 {
 	if ( achievements.count > aID ) {
 		if ( !isAvailable() ) {
-			Log::debug( "Can't report achievement progress for achievement %d "
-			            "as player didn't log in.",
-			            aID );
+			Log::verbose(
+			"Can't report achievement progress for achievement %d "
+			"as player didn't log in.",
+			aID );
 		}
 		else {
 			GKAchievement *achievement =
@@ -198,7 +199,7 @@ void _requestAchievement( const int aID, std::function<void( float, bool )> call
 	if ( achievements.count > aID ) {
 
 		if ( !isAvailable() ) {
-			Log::debug(
+			Log::verbose(
 			"Can't request achievement %d progress as player didn't log in.", aID );
 		}
 		else {

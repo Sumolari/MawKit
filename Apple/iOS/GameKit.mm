@@ -56,7 +56,7 @@ void _showLeaderboard( const int lID )
 {
 	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
-			Log::debug( "Can't open Leaderboard %d as player didn't log in.", lID );
+			Log::verbose( "Can't open Leaderboard %d as player didn't log in.", lID );
 		}
 		else {
 
@@ -85,7 +85,7 @@ void _showLeaderboard( const int lID )
 void showAchievementsList()
 {
 	if ( !isAvailable() ) {
-		Log::debug( "Can't open Achievements UI as player didn't log in." );
+		Log::verbose( "Can't open Achievements UI as player didn't log in." );
 	}
 	else {
 
@@ -158,9 +158,11 @@ void startRecording( bool microphoneEnabled, std::function<void( bool )> callbac
 			                          "Error when starting screen recorder:" );
 			                          MK::Log::warning( "%s", [error localizedDescription].UTF8String );
 		                          }
+
 		                          if ( callback != nullptr ) {
 			                          callback( error == nil );
 		                          }
+
 		                        }];
 }
 
@@ -195,15 +197,18 @@ void discardRecording( std::function<void( void )> callback )
 		return;
 	}
 
-	MK::Log::debug( "Discarting current screen recording..." );
+	stopRecording( [callback]( BOOL ) {
+		previewVCDelegate.lastRecordingPreviewVC = nil;
 
-	previewVCDelegate.lastRecordingPreviewVC = nil;
+		MK::Log::debug( "Discarting current screen recording..." );
 
-	[[RPScreenRecorder sharedRecorder] discardRecordingWithHandler:^{
-	  if ( callback != nullptr ) {
-		  callback();
-	  }
-	}];
+		[[RPScreenRecorder sharedRecorder] discardRecordingWithHandler:^{
+		}];
+		if ( callback != nullptr ) {
+			callback();
+		}
+
+	} );
 }
 
 void showLastRecordedReplayEditor()
