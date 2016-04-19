@@ -9,7 +9,6 @@
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 
 #include "../_IAPKit.hpp"
-#include "../../Constants/IAPConstants.h"
 #include "Constants.h"
 #include <functional>
 #include <vector>
@@ -22,11 +21,11 @@ std::map<MK::IAPKit::ProductID, std::vector<std::function<void( bool )>>> purcha
 
 extern "C" {
 JNIEXPORT void JNICALL Java_org_cocos2dx_cpp_AppActivity_callCppPurchasesCallback(
-JNIEnv *env, jobject thiz, jobjectArray stringArray );
+JNIEnv *env, jobject thiz, jobjectArray stringArray, jboolean success );
 };
 
 JNIEXPORT void JNICALL Java_org_cocos2dx_cpp_AppActivity_callCppPurchasesCallback(
-JNIEnv *env, jobject thiz, jobjectArray stringArray )
+JNIEnv *env, jobject thiz, jobjectArray stringArray, jboolean success )
 {
 	int stringCount = env->GetArrayLength( stringArray );
 
@@ -38,15 +37,26 @@ JNIEnv *env, jobject thiz, jobjectArray stringArray )
 
 		MK::IAPKit::ProductID prodID =
 		MK::IAPKit::productLocalIDForProductGlobalID( androidProdID );
-		MK::IAPKit::unlockProduct( prodID );
+		if ( success ) MK::IAPKit::unlockProduct( prodID );
 
-		auto callbacks = purchaseCallbacks[prodID];
-		if ( callbacks.size() > 0 ) {
-			callbacks[0]( true );
-			callbacks.erase( callbacks.begin() );
+		for ( int i = 0; i < purchaseCallbacks[prodID].size(); i++ ) {
+			purchaseCallbacks[prodID][i]( success );
+			cocos2d::log( "purchase %s with %d", androidProdID.c_str(), success );
 		}
+		purchaseCallbacks[prodID].clear();
 		// Don't forget to call `ReleaseStringUTFChars` when you're done.
 		// env->ReleaseStringUTFChars( string, androidProdID );
+	}
+
+	// If no productIDs are given, clear all callbacks using 'success'
+	if ( stringCount == 0 ) {
+		for ( auto it = purchaseCallbacks.begin(); it != purchaseCallbacks.end(); it++ ) {
+			for ( int i = 0; i < it->second.size(); i++ ) {
+				it->second[i]( success );
+				cocos2d::log( "purchase with %d", success );
+			}
+			it->second.clear();
+		}
 	}
 }
 
@@ -70,11 +80,15 @@ void MK::IAPKit::_buyIfPossible( const MK::IAPKit::ProductID productIdentifier,
 		// cocos2d::log( "Buying iap %s", androidProdID.c_str() );
 		// std::transform( androidProdID.begin(), androidProdID.end(),
 		//                androidProdID.begin(), ::tolower );
+		cocos2d::log( "making purchase of %s", androidProdID.c_str() );
 
 		t.env->CallStaticVoidMethod( t.classID, t.methodID,
 		                             t.env->NewStringUTF( androidProdID.c_str() ) );
 		t.env->DeleteLocalRef( t.classID );
 	}
+
+	// TODO use callback queue system
+	callback( false );
 }
 
 const std::string MK::IAPKit::_buyButtonTitleForProduct( const MK::IAPKit::ProductID productIdentifier )
@@ -105,12 +119,14 @@ void MK::IAPKit::_restorePurchases( std::function<void( bool )> callback )
 	cocos2d::JniMethodInfo t;
 	if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY, "restorePurchases",
 	                                              "()V" ) ) {
-		// Only persistent purchase is REMOVE_ADS
-		purchaseCallbacks[MK::IAPKit::ProductID::REMOVE_ADS].push_back( callback );
+		cocos2d::log( "Restoring purchase" );
 
 		t.env->CallStaticVoidMethod( t.classID, t.methodID );
 		t.env->DeleteLocalRef( t.classID );
 	}
+
+	// TODO use callback queue system
+	callback( false );
 }
 
 const bool MK::IAPKit::productMetadataHasBeenRetrievedFromStore( const ProductID productIdentifier )
