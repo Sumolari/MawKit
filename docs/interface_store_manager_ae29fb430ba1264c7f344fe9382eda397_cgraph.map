@@ -1,0 +1,4 @@
+<map id="&#45;[StoreManager buyProductWithIdentifier:callingOnEnd:]" name="&#45;[StoreManager buyProductWithIdentifier:callingOnEnd:]">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_log.html#a3e84a309c158873fecff57e1db770c9a" title="Logs a debug message that will not appear also in release builds. " alt="" coords="280,5,395,31"/>
+<area shape="rect" id="node3" href="$interface_store_manager.html#a9217556712f18f66db1eb4c1a66618f1" title="Returns product with given identifier. " alt="" coords="243,55,432,93"/>
+</map>

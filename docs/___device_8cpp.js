@@ -1,0 +1,9 @@
+var ___device_8cpp =
+[
+    [ "currentPlatform", "___device_8cpp.html#a7c83a89bef610abaa7ada09d38c2f3fb", null ],
+    [ "hasPowerfulHardware", "___device_8cpp.html#a3df17973cee66e7dbaad474f93e2a544", null ],
+    [ "pxScreenSize", "___device_8cpp.html#a15ac13199dceddf6370f09acf2a192ad", null ],
+    [ "screenSize", "___device_8cpp.html#a3afd74ae8409bd7e0267b5141e15197f", null ],
+    [ "UUID", "___device_8cpp.html#a7f05d5d0e1b292c8fd29bdea674fcfe3", null ],
+    [ "HD", "___device_8cpp.html#a05451548c58d28d4914a31207819ecda", null ]
+];

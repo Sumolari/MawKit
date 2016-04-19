@@ -1,0 +1,4 @@
+<map id="MK::Random::FloatingPointNumberInRange" name="MK::Random::FloatingPointNumberInRange">
+<area shape="rect" id="node2" href="$class_m_k_1_1_range.html#ad463f8b059e07cec16262700d69664fe" title="Returns a random value contained in this range, that is, a random value such that &#160;holds..." alt="" coords="238,5,426,44"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_random.html#a241f791f42c63cb45ff07af74a4483ad" title="Given a probability (floating point number between zero and one, both included) returns a random bool..." alt="" coords="241,68,422,93"/>
+</map>

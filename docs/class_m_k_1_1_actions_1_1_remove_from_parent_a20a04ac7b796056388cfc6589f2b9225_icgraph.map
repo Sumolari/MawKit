@@ -1,0 +1,4 @@
+<map id="MK::Actions::RemoveFromParent::initWithDuration" name="MK::Actions::RemoveFromParent::initWithDuration">
+<area shape="rect" id="node2" href="$class_m_k_1_1_actions_1_1_remove_from_parent.html#a565663b23b47b8f2eab2d7412a4b0a9e" title="MK::Actions::RemoveFromParent\l::clone" alt="" coords="273,5,493,44"/>
+<area shape="rect" id="node3" href="$class_m_k_1_1_actions_1_1_remove_from_parent.html#a9359e0e7ad0334829e786a2c939bb90e" title="Creates an action that will remove a node from its parent after certain delay. " alt="" coords="273,68,493,107"/>
+</map>

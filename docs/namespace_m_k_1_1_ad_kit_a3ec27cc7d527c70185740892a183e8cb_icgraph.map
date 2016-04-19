@@ -1,0 +1,6 @@
+<map id="MK::AdKit::Java_org_cocos2dx_cpp_AppActivity_callCppRewardCallback" name="MK::AdKit::Java_org_cocos2dx_cpp_AppActivity_callCppRewardCallback">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_ad_kit.html#a6bca88e69dd5dc1616d521b88eb953cc" title="Returns whether this user has video rewards available or not. " alt="" coords="241,45,467,71"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_ad_kit.html#acafca58cb7a9d2d72bb1990586e506af" title="Shows video reward ad. " alt="" coords="515,5,714,31"/>
+<area shape="rect" id="node4" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="525,79,704,117"/>
+<area shape="rect" id="node5" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="762,79,969,117"/>
+</map>

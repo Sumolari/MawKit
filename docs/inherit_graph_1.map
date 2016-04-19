@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_m_k_1_1_actions_1_1_move_to_node.html" title="MoveToNode action moves a node from its original location to the location of given node..." alt="" coords="176,5,355,31"/>
+<area shape="rect" id="node3" href="$class_m_k_1_1_actions_1_1_remove_from_parent.html" title="RemoveFromParent action removes a node from its parent after certain delay. " alt="" coords="155,55,375,80"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="MK::GameKit::ReplayKit::isAvailable" name="MK::GameKit::ReplayKit::isAvailable">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_game_kit_1_1_replay_kit.html#aba2a10bcf57eb8111fff86703994dfa6" title="Discards current recording. " alt="" coords="432,28,597,66"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_game_kit_1_1_replay_kit.html#a9143c265d93ef21d13105e2ce8bb1f4a" title="Starts recording. " alt="" coords="218,25,384,64"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_game_kit_1_1_replay_kit.html#a8f5b1f28bf1af371dcb0ce7ec82afddb" title="Stops recording. " alt="" coords="218,88,384,126"/>
+</map>

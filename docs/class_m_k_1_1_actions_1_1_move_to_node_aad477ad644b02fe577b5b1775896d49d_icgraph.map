@@ -1,0 +1,4 @@
+<map id="MK::Actions::MoveToNode::initWithDuration" name="MK::Actions::MoveToNode::initWithDuration">
+<area shape="rect" id="node2" href="$class_m_k_1_1_actions_1_1_move_to_node.html#a7307b7ed79ad427b23bca22bf490d8dd" title="MK::Actions::MoveToNode\l::clone" alt="" coords="232,5,410,44"/>
+<area shape="rect" id="node3" href="$class_m_k_1_1_actions_1_1_move_to_node.html#aaa39f3e6bcee2209804673c93f8fb0d5" title="Creates an action that will move a node to the position of given node. " alt="" coords="232,68,410,107"/>
+</map>

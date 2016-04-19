@@ -1,0 +1,5 @@
+<map id="MK::AdKit::_showBottomBanner" name="MK::AdKit::_showBottomBanner">
+<area shape="rect" id="node2" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="277,29,457,68"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_ad_kit.html#add9f76341cdf101a96a3871fa154a2c9" title="Shows a bottom banner ad. " alt="" coords="265,92,470,117"/>
+<area shape="rect" id="node3" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="518,29,724,68"/>
+</map>

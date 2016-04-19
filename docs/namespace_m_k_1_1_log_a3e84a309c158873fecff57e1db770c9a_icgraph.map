@@ -1,0 +1,14 @@
+<map id="MK::Log::debug" name="MK::Log::debug">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_i_a_p_kit.html#ad4cf30908b63ff36cf48fb6b44c45007" title="Tries to buy given item, calling callback on finished. " alt="" coords="180,43,359,68"/>
+<area shape="rect" id="node5" href="$interface_store_manager.html#ae29fb430ba1264c7f344fe9382eda397" title="Tries to buy product with given identifier, calling given callback on end. " alt="" coords="175,92,364,131"/>
+<area shape="rect" id="node6" href="$namespace_m_k_1_1_game_kit.html#aeea3e0c832dd9d93302d16f38b76c64e" title="MK::GameKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppAchievementCallback" alt="" coords="169,155,370,207"/>
+<area shape="rect" id="node8" href="$namespace_m_k_1_1_game_kit.html#abb3b0052dac094d7e492bb0cbb1a1e8b" title="MK::GameKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppScoreCallback" alt="" coords="676,187,863,239"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_i_a_p_kit.html#a244b106e812be9028b3c9c23f9f51752" title="Tries to buy given item, calling callback on finished. " alt="" coords="437,5,609,31"/>
+<area shape="rect" id="node4" href="$___i_a_p_kit_8cpp.html#a7f86d0f13644c98e90ec2118aa3ddf56" title="Java_org_cocos2dx_cpp\l_AppActivity_callCppPurchases\lCallback" alt="" coords="418,55,628,107"/>
+<area shape="rect" id="node7" href="$namespace_m_k_1_1_game_kit.html#a148ebf1481b3aa5094f533f07b62395c" title="MK::GameKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppFriendScoreCallback" alt="" coords="425,155,622,207"/>
+<area shape="rect" id="node9" href="$namespace_m_k_1_1_game_kit.html#ad65cc8a24b47cbb094481c7d0e50d505" title="On Android returns whether Google Play Games is available (true) or not. " alt="" coords="911,200,1083,225"/>
+<area shape="rect" id="node10" href="$namespace_m_k_1_1_ad_kit.html#a6bca88e69dd5dc1616d521b88eb953cc" title="Returns whether this user has video rewards available or not. " alt="" coords="1131,200,1357,225"/>
+<area shape="rect" id="node11" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="1415,165,1594,204"/>
+<area shape="rect" id="node13" href="$namespace_m_k_1_1_ad_kit.html#acafca58cb7a9d2d72bb1990586e506af" title="Shows video reward ad. " alt="" coords="1405,228,1604,253"/>
+<area shape="rect" id="node12" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="1652,165,1859,204"/>
+</map>

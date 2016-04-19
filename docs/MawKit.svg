@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="380px" height="422px" viewBox="0 0 380 422" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7 (28169) - http://www.bohemiancoding.com/sketch -->
+    <title>MawKit</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M358.425522,314.612533 C386.918372,292.429159 386.914634,256.459893 358.425522,234.27943 L241.487748,143.236439 C212.994898,121.053065 166.795121,121.055976 138.306009,143.236439 L21.3682358,234.27943 C-7.12461463,256.462804 -7.12087586,292.43207 21.3682358,314.612533 L138.306009,405.655524 C166.79886,427.838898 212.998637,427.835987 241.487748,405.655524 L358.425522,314.612533 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="380" height="295.4" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <path d="M358.425522,251.312533 C386.918372,229.129159 386.914634,193.159893 358.425522,170.97943 L241.487748,79.9364388 C212.994898,57.753065 166.795121,57.7559759 138.306009,79.9364388 L21.3682358,170.97943 C-7.12461463,193.162804 -7.12087586,229.13207 21.3682358,251.312533 L138.306009,342.355524 C166.79886,364.538898 212.998637,364.535987 241.487748,342.355524 L358.425522,251.312533 Z" id="path-4"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="380" height="295.4" fill="white">
+            <use xlink:href="#path-4"></use>
+        </mask>
+        <path d="M358.425522,188.012533 C386.918372,165.829159 386.914634,129.859893 358.425522,107.67943 L241.487748,16.6364388 C212.994898,-5.54693499 166.795121,-5.54402414 138.306009,16.6364388 L21.3682358,107.67943 C-7.12461463,129.862804 -7.12087586,165.83207 21.3682358,188.012533 L138.306009,279.055524 C166.79886,301.238898 212.998637,301.235987 241.487748,279.055524 L358.425522,188.012533 Z" id="path-7"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-9" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="380" height="295.4" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+        <linearGradient x1="14.6446609%" y1="14.6446609%" x2="85.3553391%" y2="85.3553391%" id="linearGradient-10">
+            <stop stop-color="#7B52DA" offset="0%"></stop>
+            <stop stop-color="#FF2314" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MawKit">
+            <g id="Bottom">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use stroke="#9C7BFF" mask="url(#mask-3)" stroke-width="3.75308642" fill="#7B52DA" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Middle">
+                <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                <use stroke="#E68B57" mask="url(#mask-6)" stroke-width="3.75308642" fill="#FF6C45" fill-rule="evenodd" xlink:href="#path-4"></use>
+            </g>
+            <g id="Top">
+                <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                <use stroke="#E6E6E6" mask="url(#mask-9)" stroke-width="3.75308642" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-7"></use>
+            </g>
+            <path d="M126.261983,136.161736 C140.491904,162.227939 154.724437,188.292119 168.954358,214.358323 C135.302906,203.341129 101.661899,192.295613 68,181.294603 M235.928218,51.2083678 L236.202423,51 C250.448013,77.0581114 264.65182,103.128361 278.902633,129.182426 C245.240734,118.185462 211.610173,107.119717 177.943052,96.1267985 M224.505631,129.86215 C245.648124,136.784816 266.785394,143.715574 287.927887,150.638239 C288.693048,150.923481 289.646236,151.042837 290.160697,151.615343 L249.60973,183.028304 C248.144693,180.833362 247.084435,178.490741 245.781309,176.235109 C237.317522,160.728905 228.851124,145.224723 220.384725,129.716495 C220.042622,129.156127 219.904214,128.478426 219.277461,128.053599 M167.693016,168.446605 C183.476765,173.613317 199.257902,178.790144 215.04165,183.956855 C222.831677,186.548303 230.694824,189.01028 238.437845,191.682648 L197.94433,223.051103 C197.542163,222.937816 197.275793,222.723379 197.145219,222.407793" id="clipboard4" fill="url(#linearGradient-10)"></path>
+        </g>
+    </g>
+</svg>

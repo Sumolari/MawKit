@@ -1,0 +1,14 @@
+<map id="MK::Device::isOSX" name="MK::Device::isOSX">
+<area shape="rect" id="node2" href="$interface_receipt_validator.html#a820c68148ab2fedccc43588f8d79dea6" title="+[ReceiptValidator\l appReceiptIsValidForBundle\lID:andVersion:]" alt="" coords="461,5,654,57"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_ad_kit.html#a1abd645a384f31dc1421e82772cfb472" title="Returns whether ads are enabled for this user or not. " alt="" coords="224,177,360,203"/>
+<area shape="rect" id="node12" href="$interface_receipt_validator.html#ab2df585c981dfc992ad4fe8fa09de347" title="+[ReceiptValidator\l receiptAtURL:isValidForBundle\lID:andVersion:]" alt="" coords="188,97,396,149"/>
+<area shape="rect" id="node13" href="$interface_receipt_validator.html#ad0d049250b9d647db64a8eba79683c68" title="+[ReceiptValidator\l validateAppReceiptForBundle\lID:andVersion:]" alt="" coords="191,227,393,279"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_ad_kit.html#aab6fed949fb7e7a9052144367597b9cd" title="Performs any initialization required by the ads adapter. " alt="" coords="505,81,610,107"/>
+<area shape="rect" id="node5" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="728,197,908,236"/>
+<area shape="rect" id="node7" href="$namespace_m_k_1_1_ad_kit.html#add9f76341cdf101a96a3871fa154a2c9" title="Shows a bottom banner ad. " alt="" coords="455,183,659,208"/>
+<area shape="rect" id="node8" href="$namespace_m_k_1_1_ad_kit.html#a413ead0cc048a5cb2becc3a6e50ad59b" title="Shows an interstitial ad. " alt="" coords="469,232,645,257"/>
+<area shape="rect" id="node9" href="$namespace_m_k_1_1_ad_kit.html#a339aea64224b42fd0db628bb1ee87b94" title="Shows a top banner ad. " alt="" coords="465,281,649,307"/>
+<area shape="rect" id="node10" href="$namespace_m_k_1_1_ad_kit.html#a6bca88e69dd5dc1616d521b88eb953cc" title="Returns whether this user has video rewards available or not. " alt="" coords="444,331,670,356"/>
+<area shape="rect" id="node6" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="965,197,1172,236"/>
+<area shape="rect" id="node11" href="$namespace_m_k_1_1_ad_kit.html#acafca58cb7a9d2d72bb1990586e506af" title="Shows video reward ad. " alt="" coords="718,331,917,356"/>
+</map>

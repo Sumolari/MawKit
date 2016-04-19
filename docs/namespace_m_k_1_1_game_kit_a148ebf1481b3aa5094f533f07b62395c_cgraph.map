@@ -1,0 +1,4 @@
+<map id="MK::GameKit::Java_org_cocos2dx_cpp_AppActivity_callCppFriendScoreCallback" name="MK::GameKit::Java_org_cocos2dx_cpp_AppActivity_callCppFriendScoreCallback">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_game_kit.html#aeea3e0c832dd9d93302d16f38b76c64e" title="MK::GameKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppAchievementCallback" alt="" coords="250,5,452,57"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_log.html#a3e84a309c158873fecff57e1db770c9a" title="Logs a debug message that will not appear also in release builds. " alt="" coords="500,19,615,44"/>
+</map>

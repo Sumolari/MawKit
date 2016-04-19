@@ -1,0 +1,5 @@
+<map id="MK::KVDatabase::keepMaxLongValueForKey" name="MK::KVDatabase::keepMaxLongValueForKey">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_k_v_database.html#a4058098a441fb6e62605317242ebb54a" title="Sets given key in database to the result of applying given binary operation to previous value (defaul..." alt="" coords="268,37,552,76"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_k_v_database.html#a767b41659c2ee79a635285b4ae078aa7" title="Returns long value associated with given key. " alt="" coords="600,5,813,44"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_k_v_database.html#a8c40584219ca43eb9a2e65f14e328816" title="Sets long value for given key. " alt="" coords="601,68,812,107"/>
+</map>

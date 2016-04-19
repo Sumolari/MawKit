@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$interface_g_a_d_m_adapter_ad_colony_extras.html" title="GADMAdapterAdColonyExtras" alt="" coords="314,5,517,31"/>
+<area shape="rect" id="node4" href="$interface_banner_view_delegate.html" title="BannerViewDelegate" alt="" coords="342,55,489,80"/>
+<area shape="rect" id="node6" href="$interface_interstitial_delegate.html" title="InterstitialDelegate" alt="" coords="350,104,482,129"/>
+<area shape="rect" id="node8" href="$interface_reward_video_delegate.html" title="RewardVideoDelegate" alt="" coords="338,252,493,277"/>
+<area shape="rect" id="node10" href="$interface_g_c_delegate.html" title="GCDelegate" alt="" coords="368,301,463,327"/>
+<area shape="rect" id="node12" href="$interface_g_a_d_m_adapter_ad_colony_initializer.html" title="GADMAdapterAdColonyInitializer" alt="" coords="306,153,525,179"/>
+<area shape="rect" id="node13" href="$interface_receipt_validator.html" title="ReceiptValidator" alt="" coords="357,203,475,228"/>
+<area shape="rect" id="node14" href="$interface_store_manager.html" title="StoreManager" alt="" coords="363,351,469,376"/>
+</map>

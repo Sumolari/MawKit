@@ -1,0 +1,6 @@
+<map id="MK::GameKit::isAvailable" name="MK::GameKit::isAvailable">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_ad_kit.html#a6bca88e69dd5dc1616d521b88eb953cc" title="Returns whether this user has video rewards available or not. " alt="" coords="225,64,451,89"/>
+<area shape="rect" id="node3" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="509,29,689,68"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_ad_kit.html#acafca58cb7a9d2d72bb1990586e506af" title="Shows video reward ad. " alt="" coords="499,92,698,117"/>
+<area shape="rect" id="node4" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="746,29,953,68"/>
+</map>

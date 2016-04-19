@@ -1,0 +1,4 @@
+<map id="MK::GameKit::ReplayKit::stopRecording" name="MK::GameKit::ReplayKit::stopRecording">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_log.html#a3e84a309c158873fecff57e1db770c9a" title="Logs a debug message that will not appear also in release builds. " alt="" coords="243,5,359,31"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_game_kit_1_1_replay_kit.html#a0b99deac41c67fa5ff370911361bf35e" title="Returns whether ReplayKit is available. " alt="" coords="218,55,384,93"/>
+</map>

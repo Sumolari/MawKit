@@ -1,0 +1,4 @@
+<map id="MK::GameKit::_signInPlayer" name="MK::GameKit::_signInPlayer">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_log.html#aaad0a85a2c31c679940f009469a1cabc" title="Logs a non critical message that will appear also in release builds and will also be logged to Fabric..." alt="" coords="242,5,419,31"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_log.html#a6d2108eb7cc881d7303292faba6cec84" title="Logs message with given format and additional data to Fabric&#39;s Crashlytics service. " alt="" coords="467,5,594,31"/>
+</map>

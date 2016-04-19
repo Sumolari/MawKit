@@ -1,0 +1,5 @@
+<map id="MK::AdKit::_showInterstitial" name="MK::AdKit::_showInterstitial">
+<area shape="rect" id="node2" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="237,29,417,68"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_ad_kit.html#a413ead0cc048a5cb2becc3a6e50ad59b" title="Shows an interstitial ad. " alt="" coords="239,92,415,117"/>
+<area shape="rect" id="node3" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="465,29,671,68"/>
+</map>

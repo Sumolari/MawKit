@@ -1,0 +1,4 @@
+<map id="MK::Analytics::logEvent" name="MK::Analytics::logEvent">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_analytics.html#a215ed26bf5eec68b43c10f46736dcff5" title="Logs given event without additional attributes. " alt="" coords="215,5,384,31"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_analytics.html#a06ed59ccf83270d8c89455e41efde314" title="Returns whether Analytics logging in enbled or not. " alt="" coords="221,55,378,80"/>
+</map>

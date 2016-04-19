@@ -1,0 +1,3 @@
+<map id="MK::GameKit::requestScore" name="MK::GameKit::requestScore">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_game_kit.html#a8eb477843523f68c5c9f525bc90a7ccc" title="Requests current score from given leaderboard and calls given callback once value is available..." alt="" coords="241,5,435,31"/>
+</map>

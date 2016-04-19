@@ -1,0 +1,8 @@
+<map id="MK::KVDatabase::hasKey" name="MK::KVDatabase::hasKey">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_k_v_database.html#a184cb17593fdfc77739423fded151e71" title="Forces writing KVDatabase changes to disk. " alt="" coords="229,5,454,31"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_k_v_database.html#a767b41659c2ee79a635285b4ae078aa7" title="Returns long value associated with given key. " alt="" coords="235,55,447,93"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_k_v_database.html#a10910fd1eab506db078b7a690eed3e50" title="Returns string value associated with given key. " alt="" coords="249,117,433,156"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_k_v_database.html#a8c40584219ca43eb9a2e65f14e328816" title="Sets long value for given key. " alt="" coords="235,180,447,219"/>
+<area shape="rect" id="node6" href="$namespace_m_k_1_1_k_v_database.html#a740bf14feb1b251255d768398eb53652" title="Sets string value for given key. " alt="" coords="249,243,433,281"/>
+<area shape="rect" id="node7" href="$_c_p_p_utils_8h.html#a35815dc6b4ba20ddb20e4a27f0b82294" title="Returns a NSString equivalent to given std::string. " alt="" coords="298,305,385,331"/>
+</map>

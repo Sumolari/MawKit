@@ -1,0 +1,3 @@
+<map id="MK::GameKit::requestAchievement" name="MK::GameKit::requestAchievement">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_game_kit.html#a39e7058c88be42770b272994ab24c8ef" title="Requests player&#39;s current progress on given achievement and calls given callback. ..." alt="" coords="283,5,520,31"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="+[ReceiptValidator validateAppReceiptForBundleID:andVersion:]" name="+[ReceiptValidator validateAppReceiptForBundleID:andVersion:]">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_device.html#a983d07fad256fb9e289b985cb4237efa" title="Returns whether this device is running OS X or not. " alt="" coords="255,19,389,44"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_device.html#a7c83a89bef610abaa7ada09d38c2f3fb" title="Returns current platform. " alt="" coords="437,19,626,44"/>
+</map>

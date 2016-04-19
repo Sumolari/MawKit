@@ -1,0 +1,5 @@
+<map id="+[BannerViewDelegate GADAdSizeForMKBannerSize:]" name="+[BannerViewDelegate GADAdSizeForMKBannerSize:]">
+<area shape="rect" id="node2" href="$interface_banner_view_delegate.html#aed6905a6da0f311df234de88f2b0eff2" title="&#45;[BannerViewDelegate\l initWithAdUnitID:forSize\l:andTestDevices:]" alt="" coords="272,5,439,57"/>
+<area shape="rect" id="node3" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="266,105,446,144"/>
+<area shape="rect" id="node4" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="494,105,700,144"/>
+</map>

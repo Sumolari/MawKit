@@ -1,0 +1,8 @@
+<map id="MK::KVDatabase::setLongValueForKey" name="MK::KVDatabase::setLongValueForKey">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_k_v_database.html#ac2a23838089c49a655dc2c50b56bc470" title="Return whether given key is in database or not. " alt="" coords="319,19,495,44"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_k_v_database.html#a4058098a441fb6e62605317242ebb54a" title="Sets given key in database to the result of applying given binary operation to previous value (defaul..." alt="" coords="265,68,549,107"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_k_v_database.html#aa67a4972fe3adb6041b9da4cab53841f" title="Increases long value for given key by given amount. " alt="" coords="614,5,795,44"/>
+<area shape="rect" id="node6" href="$namespace_m_k_1_1_k_v_database.html#aa3230cc40fb3f67eeebc7c388825ee81" title="Keeps maximum long value between current long value and given value. " alt="" coords="597,68,812,107"/>
+<area shape="rect" id="node7" href="$namespace_m_k_1_1_k_v_database.html#ae2bf5047196dcd947b56e680bbe53a1b" title="Keeps minimum long value between current long value and given value. " alt="" coords="599,131,810,169"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_k_v_database.html#ad79c7c1255ddfb778041afba1f47e903" title="Decreases long value for given key by given amount. " alt="" coords="860,5,1046,44"/>
+</map>

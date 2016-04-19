@@ -1,0 +1,5 @@
+<map id="MK::AdKit::videoRewardsAvailable" name="MK::AdKit::videoRewardsAvailable">
+<area shape="rect" id="node2" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="289,29,469,68"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_ad_kit.html#acafca58cb7a9d2d72bb1990586e506af" title="Shows video reward ad. " alt="" coords="280,92,479,117"/>
+<area shape="rect" id="node3" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="527,29,733,68"/>
+</map>

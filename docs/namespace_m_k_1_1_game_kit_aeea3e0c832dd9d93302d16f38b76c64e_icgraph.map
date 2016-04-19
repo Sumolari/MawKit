@@ -1,0 +1,9 @@
+<map id="MK::GameKit::Java_org_cocos2dx_cpp_AppActivity_callCppAchievementCallback" name="MK::GameKit::Java_org_cocos2dx_cpp_AppActivity_callCppAchievementCallback">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_game_kit.html#a148ebf1481b3aa5094f533f07b62395c" title="MK::GameKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppFriendScoreCallback" alt="" coords="255,51,452,103"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_game_kit.html#abb3b0052dac094d7e492bb0cbb1a1e8b" title="MK::GameKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppScoreCallback" alt="" coords="500,51,687,103"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_game_kit.html#ad65cc8a24b47cbb094481c7d0e50d505" title="On Android returns whether Google Play Games is available (true) or not. " alt="" coords="735,64,907,89"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_ad_kit.html#a6bca88e69dd5dc1616d521b88eb953cc" title="Returns whether this user has video rewards available or not. " alt="" coords="955,64,1181,89"/>
+<area shape="rect" id="node6" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="1239,29,1418,68"/>
+<area shape="rect" id="node8" href="$namespace_m_k_1_1_ad_kit.html#acafca58cb7a9d2d72bb1990586e506af" title="Shows video reward ad. " alt="" coords="1229,92,1428,117"/>
+<area shape="rect" id="node7" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="1476,29,1683,68"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="MK::IAPKit::enabled" name="MK::IAPKit::enabled">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_i_a_p_kit.html#a1f52a6b60dd3e544ea0ef1d7a75625cb" title="Returns title of buy button for product with given identifier. " alt="" coords="204,5,382,44"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_i_a_p_kit.html#a244b106e812be9028b3c9c23f9f51752" title="Tries to buy given item, calling callback on finished. " alt="" coords="207,68,379,93"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_i_a_p_kit.html#af53bbaf9538db755f6028fe26232cdd2" title="Inits In&#45;App Purchase system, calling given callback on end. " alt="" coords="238,117,348,143"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_i_a_p_kit.html#acd01af28d13abce09a6591b16733d419" title="Restores any previously purchased item, calling given callback on end. " alt="" coords="194,167,392,192"/>
+</map>

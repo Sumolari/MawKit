@@ -1,0 +1,5 @@
+<map id="MK::AdKit::_init" name="MK::AdKit::_init">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_ad_kit.html#aab6fed949fb7e7a9052144367597b9cd" title="Performs any initialization required by the ads adapter. " alt="" coords="203,5,308,31"/>
+<area shape="rect" id="node3" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="166,79,346,117"/>
+<area shape="rect" id="node4" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="394,79,600,117"/>
+</map>

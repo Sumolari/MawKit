@@ -1,0 +1,5 @@
+<map id="MK::Date::ChristmasEnd" name="MK::Date::ChristmasEnd">
+<area shape="rect" id="node2" href="$class_m_k_1_1_date.html#ae6536982c961e35d8dea066de75465a7" title="Returns a new date object given its UNIX timestamp. " alt="" coords="230,5,343,31"/>
+<area shape="rect" id="node3" href="$class_m_k_1_1_date.html#a4b09b7cb08efeeab9f1b145352998ce1" title="Returns year component of this date. " alt="" coords="221,55,351,80"/>
+<area shape="rect" id="node4" href="$class_m_k_1_1_date.html#ae9cb38bc92d6915fdfb9014fac32dd89" title="Returns today&#39;s date. " alt="" coords="226,104,346,129"/>
+</map>

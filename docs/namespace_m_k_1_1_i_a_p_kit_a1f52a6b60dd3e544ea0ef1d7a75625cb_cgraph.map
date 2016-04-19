@@ -1,0 +1,4 @@
+<map id="MK::IAPKit::buyButtonTitleForProduct" name="MK::IAPKit::buyButtonTitleForProduct">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_i_a_p_kit.html#a773f26204d8a695ed1c9c2221db6823c" title="Returns title of buy button for product with given identifier. " alt="" coords="231,5,417,44"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_i_a_p_kit.html#aaaf94652bf53567cfedcd0ef482858f8" title="Returns whether IAPKit is enabled or not. " alt="" coords="254,68,394,93"/>
+</map>

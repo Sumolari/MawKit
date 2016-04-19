@@ -1,0 +1,6 @@
+<map id="MK::Log::toFabric" name="MK::Log::toFabric">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_log.html#aaad0a85a2c31c679940f009469a1cabc" title="Logs a non critical message that will appear also in release builds and will also be logged to Fabric..." alt="" coords="180,45,357,71"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_game_kit.html#a5da107e47390d3e64f88e82d7d994d4e" title="Signs in player in Game Center. " alt="" coords="405,5,594,31"/>
+<area shape="rect" id="node4" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="409,79,589,117"/>
+<area shape="rect" id="node5" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="642,79,848,117"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="MK::Date::EasterStart" name="MK::Date::EasterStart">
+<area shape="rect" id="node2" href="$class_m_k_1_1_date.html#ae6536982c961e35d8dea066de75465a7" title="Returns a new date object given its UNIX timestamp. " alt="" coords="403,5,515,31"/>
+<area shape="rect" id="node3" href="$class_m_k_1_1_date.html#a4bf5961f75daea4053c9624e2dce838a" title="Returns the last day of Easter of this year. " alt="" coords="204,55,351,80"/>
+<area shape="rect" id="node4" href="$class_m_k_1_1_date.html#ae9cb38bc92d6915fdfb9014fac32dd89" title="Returns today&#39;s date. " alt="" coords="399,55,519,80"/>
+</map>

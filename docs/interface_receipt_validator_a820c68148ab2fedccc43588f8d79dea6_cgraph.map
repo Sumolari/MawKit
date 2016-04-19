@@ -1,0 +1,9 @@
+<map id="+[ReceiptValidator appReceiptIsValidForBundleID:andVersion:]" name="+[ReceiptValidator appReceiptIsValidForBundleID:andVersion:]">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_device.html#a983d07fad256fb9e289b985cb4237efa" title="Returns whether this device is running OS X or not. " alt="" coords="502,5,637,31"/>
+<area shape="rect" id="node4" href="$interface_receipt_validator.html#ab2df585c981dfc992ad4fe8fa09de347" title="+[ReceiptValidator\l receiptAtURL:isValidForBundle\lID:andVersion:]" alt="" coords="246,56,454,108"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_device.html#a7c83a89bef610abaa7ada09d38c2f3fb" title="Returns current platform. " alt="" coords="685,5,873,31"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_device.html#a7f05d5d0e1b292c8fd29bdea674fcfe3" title="Returns UUID of this device. " alt="" coords="505,55,634,80"/>
+<area shape="rect" id="node6" href="$_c_p_p_utils_8h.html#a35815dc6b4ba20ddb20e4a27f0b82294" title="Returns a NSString equivalent to given std::string. " alt="" coords="526,104,613,129"/>
+<area shape="rect" id="node7" href="$_c_p_p_utils_8h.html#a454603a4e70231351c60f4c95b2107d1" title="Returns NSData with bytes represented by given hexadecimal NSString. " alt="" coords="517,153,622,179"/>
+<area shape="rect" id="node8" href="$namespace_m_k_1_1_a_b_database.html#afd3d3523193c664c29f23e4235e13c8d" title="Initializes A/B database and calls given callback if this is the first time database has been initial..." alt="" coords="705,153,853,179"/>
+</map>

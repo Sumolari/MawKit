@@ -1,0 +1,4 @@
+<map id="MK::Analytics::logLevelEnd" name="MK::Analytics::logLevelEnd">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_analytics.html#a128674e7c2ff4904a91e3a7cac8c9a9a" title="Logs end of level with given name/identifier, given score, whether user succeeded or not in the level..." alt="" coords="236,5,427,31"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_analytics.html#a06ed59ccf83270d8c89455e41efde314" title="Returns whether Analytics logging in enbled or not. " alt="" coords="253,55,410,80"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="MK::AdKit::videoRewardsAvailable" name="MK::AdKit::videoRewardsAvailable">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_ad_kit.html#a1abd645a384f31dc1421e82772cfb472" title="Returns whether ads are enabled for this user or not. " alt="" coords="306,68,441,93"/>
+<area shape="rect" id="node6" href="$namespace_m_k_1_1_game_kit.html#ad65cc8a24b47cbb094481c7d0e50d505" title="On Android returns whether Google Play Games is available (true) or not. " alt="" coords="288,124,459,149"/>
+<area shape="rect" id="node11" href="$namespace_m_k_1_1_ad_kit.html#a3ec27cc7d527c70185740892a183e8cb" title="MK::AdKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppRewardCallback" alt="" coords="280,173,467,225"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_k_v_database.html#a767b41659c2ee79a635285b4ae078aa7" title="Returns long value associated with given key. " alt="" coords="515,5,727,44"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_device.html#a983d07fad256fb9e289b985cb4237efa" title="Returns whether this device is running OS X or not. " alt="" coords="554,68,689,93"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_device.html#a7c83a89bef610abaa7ada09d38c2f3fb" title="Returns current platform. " alt="" coords="780,68,968,93"/>
+<area shape="rect" id="node7" href="$namespace_m_k_1_1_game_kit.html#abb3b0052dac094d7e492bb0cbb1a1e8b" title="MK::GameKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppScoreCallback" alt="" coords="528,117,715,169"/>
+<area shape="rect" id="node8" href="$namespace_m_k_1_1_log.html#a3e84a309c158873fecff57e1db770c9a" title="Logs a debug message that will not appear also in release builds. " alt="" coords="1270,156,1385,181"/>
+<area shape="rect" id="node9" href="$namespace_m_k_1_1_game_kit.html#a148ebf1481b3aa5094f533f07b62395c" title="MK::GameKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppFriendScoreCallback" alt="" coords="775,175,972,227"/>
+<area shape="rect" id="node10" href="$namespace_m_k_1_1_game_kit.html#aeea3e0c832dd9d93302d16f38b76c64e" title="MK::GameKit::Java_org\l_cocos2dx_cpp_AppActivity\l_callCppAchievementCallback" alt="" coords="1020,175,1222,227"/>
+</map>

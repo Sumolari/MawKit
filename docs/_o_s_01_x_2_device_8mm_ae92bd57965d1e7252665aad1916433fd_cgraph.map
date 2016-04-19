@@ -1,0 +1,10 @@
+<map id="copy_mac_address" name="copy_mac_address">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_device.html#a7c83a89bef610abaa7ada09d38c2f3fb" title="Returns current platform. " alt="" coords="210,5,398,31"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_device.html#a3df17973cee66e7dbaad474f93e2a544" title="Returns whether this device has powerful hardware or not. " alt="" coords="190,55,418,80"/>
+<area shape="rect" id="node4" href="$_c_p_p_utils_8h.html#afdab0150d60cda7674034a9e4e4dd484" title="Returns NSString with hexadecimal representation of given NSData. " alt="" coords="251,104,357,129"/>
+<area shape="rect" id="node6" href="$namespace_m_k_1_1_device.html#a15ac13199dceddf6370f09acf2a192ad" title="Retuns this device&#39;s screen size, in pixel. " alt="" coords="215,153,394,179"/>
+<area shape="rect" id="node7" href="$namespace_m_k_1_1_device.html#a3afd74ae8409bd7e0267b5141e15197f" title="Retuns this device&#39;s screen size, in points. " alt="" coords="466,179,629,204"/>
+<area shape="rect" id="node8" href="$namespace_m_k_1_1_device.html#a7f05d5d0e1b292c8fd29bdea674fcfe3" title="Returns UUID of this device. " alt="" coords="240,255,369,280"/>
+<area shape="rect" id="node9" href="$namespace_m_k_1_1_log.html#a370b710e345cbc5eb6c2a4f27aeb504f" title="Logs a warning message that will appear also in release builds. " alt="" coords="242,304,367,329"/>
+<area shape="rect" id="node5" href="$_c_p_p_utils_8mm.html#a691499df31ae544646f68e2b6b75ee16" title="itoh" alt="" coords="526,104,569,129"/>
+</map>

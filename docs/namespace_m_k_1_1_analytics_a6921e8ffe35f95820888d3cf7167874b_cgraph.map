@@ -1,0 +1,4 @@
+<map id="MK::Analytics::logLevelStart" name="MK::Analytics::logLevelStart">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_analytics.html#a9e78b00c2896743d7d7f4a574ec13856" title="Logs start of level with given name/identifier and given optional additional attributes. " alt="" coords="241,5,407,44"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_analytics.html#a06ed59ccf83270d8c89455e41efde314" title="Returns whether Analytics logging in enbled or not. " alt="" coords="245,68,402,93"/>
+</map>

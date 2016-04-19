@@ -1,0 +1,3 @@
+<map id="MK::GameKit::requestFriendsScores" name="MK::GameKit::requestFriendsScores">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_game_kit.html#a77147a74419d7b3ea3f2d4ab4b78a63b" title="Requests current scores of current player&#39;s friends in given leaderboard and calls given callback onc..." alt="" coords="250,5,455,44"/>
+</map>

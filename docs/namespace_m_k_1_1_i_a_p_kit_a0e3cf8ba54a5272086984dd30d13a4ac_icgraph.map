@@ -1,0 +1,4 @@
+<map id="MK::IAPKit::_restorePurchases" name="MK::IAPKit::_restorePurchases">
+<area shape="rect" id="node2" href="$___i_a_p_kit_8cpp.html#a7f86d0f13644c98e90ec2118aa3ddf56" title="Java_org_cocos2dx_cpp\l_AppActivity_callCppPurchases\lCallback" alt="" coords="258,5,468,57"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_i_a_p_kit.html#acd01af28d13abce09a6591b16733d419" title="Restores any previously purchased item, calling given callback on end. " alt="" coords="264,81,462,107"/>
+</map>

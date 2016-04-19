@@ -1,0 +1,4 @@
+<map id="MK::IAPKit::_buyButtonTitleForProduct" name="MK::IAPKit::_buyButtonTitleForProduct">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_i_a_p_kit.html#a1f52a6b60dd3e544ea0ef1d7a75625cb" title="Returns title of buy button for product with given identifier. " alt="" coords="255,5,432,44"/>
+<area shape="rect" id="node3" href="$___i_a_p_kit_8cpp.html#a7f86d0f13644c98e90ec2118aa3ddf56" title="Java_org_cocos2dx_cpp\l_AppActivity_callCppPurchases\lCallback" alt="" coords="239,68,448,120"/>
+</map>

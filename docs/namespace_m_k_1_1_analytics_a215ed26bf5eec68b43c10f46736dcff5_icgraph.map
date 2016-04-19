@@ -1,0 +1,6 @@
+<map id="MK::Analytics::_logEvent" name="MK::Analytics::_logEvent">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_analytics.html#a7bb95c80f3280eb2e484571354d8c61e" title="Logs given event without additional attributes. " alt="" coords="222,36,384,61"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_analytics.html#a45074f520084ef7dadcf189155705026" title="Logs that app tried to display a video reward ad that was not ready yet. " alt="" coords="432,29,622,68"/>
+<area shape="rect" id="node4" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="670,29,850,68"/>
+<area shape="rect" id="node5" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="898,29,1104,68"/>
+</map>

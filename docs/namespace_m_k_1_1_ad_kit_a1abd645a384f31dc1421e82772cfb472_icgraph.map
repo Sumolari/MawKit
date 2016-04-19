@@ -1,0 +1,10 @@
+<map id="MK::AdKit::enabled" name="MK::AdKit::enabled">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_ad_kit.html#aab6fed949fb7e7a9052144367597b9cd" title="Performs any initialization required by the ads adapter. " alt="" coords="249,5,355,31"/>
+<area shape="rect" id="node3" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="473,121,653,160"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_ad_kit.html#add9f76341cdf101a96a3871fa154a2c9" title="Shows a bottom banner ad. " alt="" coords="200,107,404,132"/>
+<area shape="rect" id="node6" href="$namespace_m_k_1_1_ad_kit.html#a413ead0cc048a5cb2becc3a6e50ad59b" title="Shows an interstitial ad. " alt="" coords="214,156,390,181"/>
+<area shape="rect" id="node7" href="$namespace_m_k_1_1_ad_kit.html#a339aea64224b42fd0db628bb1ee87b94" title="Shows a top banner ad. " alt="" coords="210,205,394,231"/>
+<area shape="rect" id="node8" href="$namespace_m_k_1_1_ad_kit.html#a6bca88e69dd5dc1616d521b88eb953cc" title="Returns whether this user has video rewards available or not. " alt="" coords="189,255,415,280"/>
+<area shape="rect" id="node4" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="710,121,917,160"/>
+<area shape="rect" id="node9" href="$namespace_m_k_1_1_ad_kit.html#acafca58cb7a9d2d72bb1990586e506af" title="Shows video reward ad. " alt="" coords="463,255,662,280"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Java_org_cocos2dx_cpp_AppActivity_callCppPurchasesCallback" name="Java_org_cocos2dx_cpp_AppActivity_callCppPurchasesCallback">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_i_a_p_kit.html#a773f26204d8a695ed1c9c2221db6823c" title="Returns title of buy button for product with given identifier. " alt="" coords="273,5,458,44"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_i_a_p_kit.html#ad4cf30908b63ff36cf48fb6b44c45007" title="Tries to buy given item, calling callback on finished. " alt="" coords="276,68,455,93"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_i_a_p_kit.html#a41b7f768a3e8c9154647f7fe6e07028f" title="Inits In&#45;App Purchase system, calling given callback on end. " alt="" coords="307,117,424,143"/>
+<area shape="rect" id="node6" href="$namespace_m_k_1_1_i_a_p_kit.html#a0e3cf8ba54a5272086984dd30d13a4ac" title="Restores any previously purchased item, calling given callback on end. " alt="" coords="263,167,468,192"/>
+<area shape="rect" id="node7" href="$namespace_m_k_1_1_i_a_p_kit.html#ab11c5800bf0812d1afe75bb65caf2817" title="Returns string identifier (global ID) of given in&#45;app purchase. " alt="" coords="277,216,454,255"/>
+<area shape="rect" id="node8" href="$namespace_m_k_1_1_i_a_p_kit.html#a9d7e0aebe4a7c86838b52deb38aa3d9d" title="Returns enum class item (local ID) of in&#45;app purchase with given string identifier (global ID)..." alt="" coords="281,279,450,317"/>
+<area shape="rect" id="node9" href="$namespace_m_k_1_1_i_a_p_kit.html#a99962d8cc37e6db5b77b955653c661ce" title="Returns whether given product has been found on store and can be bought or not. " alt="" coords="267,341,464,380"/>
+<area shape="rect" id="node10" href="$namespace_m_k_1_1_i_a_p_kit.html#a46680ce03df4993f7c6fa87861333de4" title="MK::IAPKit::unlockProduct" alt="" coords="277,404,454,429"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_log.html#a3e84a309c158873fecff57e1db770c9a" title="Logs a debug message that will not appear also in release builds. " alt="" coords="516,68,631,93"/>
+</map>

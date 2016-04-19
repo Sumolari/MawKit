@@ -1,0 +1,7 @@
+<map id="MK::AdKit::showInterstitial" name="MK::AdKit::showInterstitial">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_ad_kit.html#ae4fe5a11d697083b53f50d9abcc3286e" title="Shows an interstitial ad. " alt="" coords="230,5,413,31"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_ad_kit.html#a1abd645a384f31dc1421e82772cfb472" title="Returns whether ads are enabled for this user or not. " alt="" coords="254,55,389,80"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_k_v_database.html#a767b41659c2ee79a635285b4ae078aa7" title="Returns long value associated with given key. " alt="" coords="461,20,673,59"/>
+<area shape="rect" id="node5" href="$namespace_m_k_1_1_device.html#a983d07fad256fb9e289b985cb4237efa" title="Returns whether this device is running OS X or not. " alt="" coords="500,83,635,108"/>
+<area shape="rect" id="node6" href="$namespace_m_k_1_1_device.html#a7c83a89bef610abaa7ada09d38c2f3fb" title="Returns current platform. " alt="" coords="721,83,910,108"/>
+</map>

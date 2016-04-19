@@ -1,0 +1,5 @@
+<map id="MK::ABDatabase::init" name="MK::ABDatabase::init">
+<area shape="rect" id="node2" href="$_c_p_p_utils_8mm.html#a454603a4e70231351c60f4c95b2107d1" title="Returns NSData with bytes represented by given hexadecimal NSString. " alt="" coords="201,19,307,44"/>
+<area shape="rect" id="node3" href="$interface_receipt_validator.html#ab2df585c981dfc992ad4fe8fa09de347" title="+[ReceiptValidator\l receiptAtURL:isValidForBundle\lID:andVersion:]" alt="" coords="355,5,563,57"/>
+<area shape="rect" id="node4" href="$interface_receipt_validator.html#a820c68148ab2fedccc43588f8d79dea6" title="+[ReceiptValidator\l appReceiptIsValidForBundle\lID:andVersion:]" alt="" coords="611,5,804,57"/>
+</map>

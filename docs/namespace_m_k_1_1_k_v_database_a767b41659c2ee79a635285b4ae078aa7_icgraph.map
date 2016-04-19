@@ -1,0 +1,17 @@
+<map id="MK::KVDatabase::getLongValueForKey" name="MK::KVDatabase::getLongValueForKey">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_ad_kit.html#a1abd645a384f31dc1421e82772cfb472" title="Returns whether ads are enabled for this user or not. " alt="" coords="340,156,476,181"/>
+<area shape="rect" id="node11" href="$namespace_m_k_1_1_k_v_database.html#ac2a23838089c49a655dc2c50b56bc470" title="Return whether given key is in database or not. " alt="" coords="320,233,496,259"/>
+<area shape="rect" id="node12" href="$namespace_m_k_1_1_k_v_database.html#a4058098a441fb6e62605317242ebb54a" title="Sets given key in database to the result of applying given binary operation to previous value (defaul..." alt="" coords="266,339,550,377"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_ad_kit.html#aab6fed949fb7e7a9052144367597b9cd" title="Performs any initialization required by the ads adapter. " alt="" coords="659,5,764,31"/>
+<area shape="rect" id="node4" href="$interface_reward_video_delegate.html#a0bfa3f23795d0ad8cedcb3c7601b9305" title="&#45;[RewardVideoDelegate\l requestNewRewardVideo]" alt="" coords="882,121,1062,160"/>
+<area shape="rect" id="node6" href="$namespace_m_k_1_1_ad_kit.html#add9f76341cdf101a96a3871fa154a2c9" title="Shows a bottom banner ad. " alt="" coords="609,107,813,132"/>
+<area shape="rect" id="node7" href="$namespace_m_k_1_1_ad_kit.html#a413ead0cc048a5cb2becc3a6e50ad59b" title="Shows an interstitial ad. " alt="" coords="623,156,799,181"/>
+<area shape="rect" id="node8" href="$namespace_m_k_1_1_ad_kit.html#a339aea64224b42fd0db628bb1ee87b94" title="Shows a top banner ad. " alt="" coords="619,205,803,231"/>
+<area shape="rect" id="node9" href="$namespace_m_k_1_1_ad_kit.html#a6bca88e69dd5dc1616d521b88eb953cc" title="Returns whether this user has video rewards available or not. " alt="" coords="598,255,824,280"/>
+<area shape="rect" id="node5" href="$interface_reward_video_delegate.html#a5d8713e80adf05ec03e68072d573ad06" title="&#45;[RewardVideoDelegate\l initWithAdUnitID:andCallback:]" alt="" coords="1119,121,1326,160"/>
+<area shape="rect" id="node10" href="$namespace_m_k_1_1_ad_kit.html#acafca58cb7a9d2d72bb1990586e506af" title="Shows video reward ad. " alt="" coords="872,255,1071,280"/>
+<area shape="rect" id="node13" href="$namespace_m_k_1_1_k_v_database.html#aa67a4972fe3adb6041b9da4cab53841f" title="Increases long value for given key by given amount. " alt="" coords="620,304,802,343"/>
+<area shape="rect" id="node15" href="$namespace_m_k_1_1_k_v_database.html#aa3230cc40fb3f67eeebc7c388825ee81" title="Keeps maximum long value between current long value and given value. " alt="" coords="604,367,818,405"/>
+<area shape="rect" id="node16" href="$namespace_m_k_1_1_k_v_database.html#ae2bf5047196dcd947b56e680bbe53a1b" title="Keeps minimum long value between current long value and given value. " alt="" coords="606,429,817,468"/>
+<area shape="rect" id="node14" href="$namespace_m_k_1_1_k_v_database.html#ad79c7c1255ddfb778041afba1f47e903" title="Decreases long value for given key by given amount. " alt="" coords="879,304,1065,343"/>
+</map>

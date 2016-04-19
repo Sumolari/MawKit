@@ -1,0 +1,4 @@
+<map id="MK::IAPKit::_buyIfPossible" name="MK::IAPKit::_buyIfPossible">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_i_a_p_kit.html#a244b106e812be9028b3c9c23f9f51752" title="Tries to buy given item, calling callback on finished. " alt="" coords="252,5,424,31"/>
+<area shape="rect" id="node3" href="$___i_a_p_kit_8cpp.html#a7f86d0f13644c98e90ec2118aa3ddf56" title="Java_org_cocos2dx_cpp\l_AppActivity_callCppPurchases\lCallback" alt="" coords="233,55,443,107"/>
+</map>

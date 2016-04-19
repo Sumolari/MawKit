@@ -1,0 +1,5 @@
+<map id="MK::AdKit::enabled" name="MK::AdKit::enabled">
+<area shape="rect" id="node2" href="$namespace_m_k_1_1_k_v_database.html#a767b41659c2ee79a635285b4ae078aa7" title="Returns long value associated with given key. " alt="" coords="189,5,401,44"/>
+<area shape="rect" id="node3" href="$namespace_m_k_1_1_device.html#a983d07fad256fb9e289b985cb4237efa" title="Returns whether this device is running OS X or not. " alt="" coords="228,68,362,93"/>
+<area shape="rect" id="node4" href="$namespace_m_k_1_1_device.html#a7c83a89bef610abaa7ada09d38c2f3fb" title="Returns current platform. " alt="" coords="449,68,637,93"/>
+</map>
