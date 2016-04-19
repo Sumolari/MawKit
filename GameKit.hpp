@@ -150,6 +150,8 @@ const bool isAvailable();
 /**
  *  `GameKit::ReplayKit` wraps GameCenter's ReplayKit framework introduced in
  *  iOS 9.
+ *
+ *  @ios
  */
 namespace ReplayKit {
 
@@ -157,7 +159,7 @@ namespace ReplayKit {
  *  Returns whether ReplayKit is available. ReplayKit is available in iPhone 5S
  *  and newer and on iPad Air / iPad mini 2 and newer.
  *
- *  @native
+ *  @ios
  *
  *  @return `true` if ReplayKit is available on this device.
  */
@@ -166,7 +168,7 @@ const bool isAvailable();
 /**
  *  Starts recording.
  *
- *  @native
+ *  @ios
  *
  *  @param microphoneEnabled Whether microphone should be enabled or not.
  *  @param callback          Callback to be called when system starts recording.
@@ -179,7 +181,7 @@ void startRecording( bool microphoneEnabled               = false,
 /**
  *  Stops recording.
  *
- *  @native
+ *  @ios
  *
  *  @param callback Callback to be called when recording is stopped.
  *                  First parameter will be `true` on success.
@@ -191,7 +193,7 @@ void stopRecording( std::function<void( bool )> callback = nullptr );
  *
  *  @note Also discards any recorded replay.
  *
- *  @native
+ *  @ios
  *
  *  @param callback Callback to be called when recording is discarted.
  */
@@ -199,11 +201,15 @@ void discardRecording( std::function<void( void )> callback = nullptr );
 
 /**
  *  Shows last recording editor and share options, if any.
+ *
+ *  @ios
  */
 void showLastRecordedReplayEditor();
 
 /**
  *  Returns whether this is a replay recorded or not.
+ *
+ *  @ios
  *
  *  @return `true` if there is a replay recorded.
  */
