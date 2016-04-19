@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mawkit by Sumolari</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Mawkit</h1>
+      <h2 class="project-tagline">Cross-platform utilities for Cocos2d-x</h2>
+      <a href="https://github.com/Sumolari/MawKit" class="btn">View on GitHub</a>
+      <a href="https://github.com/Sumolari/MawKit/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Sumolari/MawKit/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><img src="https://cloud.githubusercontent.com/assets/779767/14524930/472cc86c-023b-11e6-8794-f28ab8bc8966.png" alt="MawKit" title="MawKit"></p>
+
+<p><strong>MawKit</strong> is a library built on top of Cocos2d-x offering useful cross-platform utilities to implement platform-specific features like <em>leaderboards</em>, <em>achievements</em>, or <em>in-app purchases</em> quickly.</p>
+
+<h2>
+<a id="main-features" class="anchor" href="#main-features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Main features</h2>
+
+<ul>
+<li>
+<strong>Leaderboards and achievements:</strong> Game Center (iOS, OS X) / Google Play Games (Android).</li>
+<li>
+<strong>In-app purchases:</strong> App Store (iOS, OS X), Google Play (Android).</li>
+<li>
+<strong>Ads:</strong> AdMob and AdColony (iOS, Android, not supported on OS X).</li>
+<li>
+<strong>Analytics:</strong> Fabric (iOS, Android, OS X) and MixPanel (iOS).</li>
+<li>
+<strong>Mathematical utilities:</strong> ranges, random number generator.</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
+
+<ul>
+<li>
+<strong>CocoaPods</strong> (iOS).</li>
+</ul>
+
+<h3>
+<a id="android" class="anchor" href="#android" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a> Android</h3>
+
+<p>To do...</p>
+
+<h3>
+<a id="ios--os-x" class="anchor" href="#ios--os-x" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>iOS / OS X</h3>
+
+<ol>
+<li><p>Run <code>pod init</code> in <code>proj.ios_mac</code> folder to create a <code>Podfile</code>. <a href="https://cloud.githubusercontent.com/assets/779767/14518514/9823d7c4-0218-11e6-9015-7370af4ca264.gif">[Gif]</a></p></li>
+<li>
+<p>Add the following dependencies for <strong>iOS</strong>:</p>
+
+<ul>
+<li><code>pod 'SecureNSUserDefaults'</code></li>
+<li><code>pod 'Fabric'                # Fabric</code></li>
+<li><code>pod 'Crashlytics'           # Fabric</code></li>
+<li><code>pod 'FBSDKCoreKit'          # Facebook</code></li>
+<li><code>pod 'FBSDKShareKit'         # Facebook</code></li>
+<li><code>pod 'FBSDKShareKit'         # Facebook</code></li>
+<li><code>pod 'Bolts'                 # Facebook</code></li>
+<li><code>pod 'Google-Mobile-Ads-SDK' # AdMob</code></li>
+<li><code>pod 'Mixpanel'              # MixPanel</code></li>
+</ul>
+</li>
+<li>Add the following dependencies for <strong>OS X</strong>:
+
+<ul>
+<li><code>pod 'SecureNSUserDefaults'</code></li>
+<li><code>pod 'Fabric'                # Fabric</code></li>
+<li><code>pod 'Crashlytics'           # Fabric</code></li>
+</ul>
+</li>
+<li>Open Xcode project and locate <code>Build Settings</code> tab of <strong>iOS</strong> target: <a href="https://cloud.githubusercontent.com/assets/779767/14518515/98274c06-0218-11e6-924d-1bb153b7522a.gif">[Gif]</a>
+
+<ol>
+<li>Look for <code>GCC_PREPROCESSOR_DEFINITIONS</code> and prepend <code>$(inherited)</code> for release and debug build.</li>
+<li>Look for <code>LIBRARY_SEARCH_PATHS</code>, prepend <code>$(inherited)</code> and append <code>$(PROJECT_DIR)/../Classes/MawKit/Apple/iOS</code> for release and debug build.</li>
+<li>Look for <code>OTHER_LDFLAGS</code> and prepend <code>$(inherited)</code> for release and debug build.</li>
+</ol>
+</li>
+<li>Open Xcode project and locate <code>Build Settings</code> tab of <strong>OS X</strong> target:
+
+<ol>
+<li>Look for <code>GCC_PREPROCESSOR_DEFINITIONS</code> and prepend <code>$(inherited)</code> for release and debug build.</li>
+<li>Look for <code>LIBRARY_SEARCH_PATHS</code> and prepend <code>$(inherited)</code> for release and debug build.</li>
+<li>Look for <code>OTHER_LDFLAGS</code> and prepend <code>$(inherited)</code> for release and debug build.</li>
+</ol>
+</li>
+<li>Run <code>pod install</code> to install pods.</li>
+<li>Add <code>Game Center</code> and <code>In-App Purchase</code> capabilities on both iOS and OS X. <a href="https://cloud.githubusercontent.com/assets/779767/14518513/9822364e-0218-11e6-9256-38197db48101.gif">[Gif]</a>
+</li>
+<li>Import <code>MawKit</code> folder in Xcode.</li>
+<li>Remove <code>MawKit/Android</code> and <code>MawKit/Example</code> folders from Xcode project. <a href="https://cloud.githubusercontent.com/assets/779767/14518512/9821d3f2-0218-11e6-8839-fc8ade992f80.gif">[Gif]</a>
+</li>
+<li>Check files <code>.mm</code> and <code>.a</code> files in <code>MawKit/Apple/iOS</code> so they are only build on iOS target.</li>
+<li>Check files <code>.mm</code> files in <code>MawKit/Apple/OS X</code> so they are only build on OS X target.</li>
+<li>Add <code>Examples/ios_ids.plist</code> and <code>Examples/mac_ids.plist</code> to <code>Resources</code> folder. Don't forget to add it in Xcode so it gets bundled. <a href="https://cloud.githubusercontent.com/assets/779767/14518517/982cc0aa-0218-11e6-9d26-00ae65c6bd1a.gif">[Gif]</a>
+</li>
+<li>Add <code>Examples/MKConstants.h</code> and <code>Examples/MKUtils.cpp</code> to project. <code>MKUtils.cpp</code> should be added to iOS and OS X targets. <a href="https://cloud.githubusercontent.com/assets/779767/14518516/982c80e0-0218-11e6-86c2-31be493e9ad5.gif">[Gif]</a>
+</li>
+<li>Set up and fix <strong>Fabric</strong> for iOS and OS X. This is required as <code>Fabric.framework</code> is different for iOS and OS X and Fabric's app does not support multiplatform targets by default. Fix is as easy as getting both versions and storing them at different paths. This can be done with the two following steps:
+
+<ol>
+<li>Follow <strong>Fabric</strong> instructions to set up Fabric for <strong>iOS</strong> target. When finished you'll have a <code>Fabric.framework</code> folder inside <code>proj.ios_mac</code>. You'll have to move it to <code>proj.ios_mac/iOS</code> subfolder and update Xcode project to reflect the change.</li>
+<li>Follow <strong>Fabric</strong> instructions again to set up Fabric for <strong>OS X</strong> target. When finished you'll have a <code>Fabric.framework</code> folder inside <code>proj.ios_mac</code>. You'll have to move it to <code>proj.ios_mac/osx</code> subfolder and update Xcode project to reflect the change. </li>
+</ol>
+</li>
+<li>Set up <strong>MixPanel</strong> for iOS (MixPanel is not supported on OS X):
+
+<ol>
+<li>Open <code>proj.ios_mac/ios/AppDelegate.mm</code> and add in the header <code>#import "Mixpanel.h"</code> to import MixPanel.</li>
+<li>Open <code>proj.ios_mac/ios/AppDelegate.mm</code> and add in the header <code>#define MIXPANEL_TOKEN @"YOUR_MIXPANEL_TOKEN_HERE"</code> to set up MixPanel's token.</li>
+<li>Open <code>proj.ios_mac/ios/AppDelegate.mm</code> and add this line to <code>- (BOOL)application:didFinishLaunchingWithOptions:</code> method:  <code>[Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];</code> to init MixPanel analytics on startup.</li>
+</ol>
+</li>
+<li>To support <strong>Game Center</strong> on <strong>iOS</strong>, convert <code>_window</code> ivar into a property in <code>proj.ios_mac/ios/AppDelegate.h</code>: <code>@property ( nonatomic, strong ) UIWindow *window;</code> (nothing is required on OS X).</li>
+</ol>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Everything defined and implemented by <strong>MawKit</strong> can be found on <code>MK</code> namespace.</p>
+
+<h3>
+<a id="gamekit" class="anchor" href="#gamekit" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a> GameKit</h3>
+
+<p>To do...</p>
+
+<h3>
+<a id="in-app-purchases" class="anchor" href="#in-app-purchases" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>in-App purchases</h3>
+
+<p>To do...</p>
+
+<h3>
+<a id="kvdatabase" class="anchor" href="#kvdatabase" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>KVDatabase</h3>
+
+<p>To do...</p>
+
+<h3>
+<a id="mathematical-utilities" class="anchor" href="#mathematical-utilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mathematical utilities</h3>
+
+<h4>
+<a id="random" class="anchor" href="#random" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Random</h4>
+
+<p><img src="https://cloud.githubusercontent.com/assets/779767/14518510/97e3b766-0218-11e6-8013-732ee304a835.gif" alt="first-use"></p>
+
+<p><a href="https://cloud.githubusercontent.com/assets/779767/14518511/980ee828-0218-11e6-8b55-fef2da3ff5ac.gif">[Random loop Gif]</a></p>
+
+<h4>
+<a id="ranges" class="anchor" href="#ranges" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ranges</h4>
+
+<pre><code>auto range = MK::Range&lt;int&gt;(10, 20);
+MK::Log::debug(
+    "Random number in [%d, %d] range: %d",
+    range.first(),
+    range.last(), 
+    range.randomInteger()
+);
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Sumolari/MawKit">Mawkit</a> is maintained by <a href="https://github.com/Sumolari">Sumolari</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
