@@ -207,60 +207,47 @@ JNIEnv *env, jobject thiz, jint id, jfloat progress, jboolean success )
 	achievementCallbacks[id].clear();
 }
 
+namespace ReplayKit {
+
+const bool isAvailable()
+{
+	return false;
+}
+
+void startRecording( bool, std::function<void( bool )> callback )
+{
+	if ( callback != nullptr ) {
+		callback( false );
+	}
+}
+
+void stopRecording( std::function<void( bool )> callback )
+{
+	if ( callback != nullptr ) {
+		callback( false );
+	}
+}
+
+void discardRecording( std::function<void( void )> callback )
+{
+	if ( callback != nullptr ) {
+		callback();
+	}
+}
+
+void showLastRecordedReplayEditor()
+{
+}
+
+bool hasRecordedReplay()
+{
+	return false;
+}
+
+}; // namespace ReplayKit
+
 }; // namespace GameKit
 
 }; // namespace MK
 
 #endif
-
-/* ORIGINAL CODE OF GAME SHARING LEFT AS REFERENCE */
-
-/*
-#include <map>
-
-#include "GameSharing.h"
-
-USING_NS_CC;
-
-bool GameSharing::bIsGPGAvailable       = true;
-bool GameSharing::wasGPGAvailableCalled = false;
-std::function<void()> GameSharing::errorHandler;
-bool GameSharing::requestIsBeingProcessed = false;
-
-#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-std::map<unsigned long long, std::function<void( int )>> callbacks;
-unsigned long long lastRequestID = 0;
-#endif
-
-void GameSharing::RequestCurrentScoreFromLeaderboard( int leaderboardID,
-std::function<void( int )> callback )
-{
-#if ( CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM ==
-CC_PLATFORM_MAC )
-    GameSharing::startScoreRequest( leaderboardID, callback );
-    requestIsBeingProcessed = true;
-#endif
-#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-    lastRequestID++;
-    // TODO: Pass last request ID to Java.
-    cocos2d::JniMethodInfo t;
-    if ( cocos2d::JniHelper::getStaticMethodInfo( t, MK::Android::APP_ACTIVITY,
-                                        "requestScoreFromLeaderboard",
-                                        "()V" ) ) {
-        t.env->CallStaticVoidMethod( t.classID, t.methodID );
-    }
-    std::function<void( int )> runCallbackAndRemove = [&, callback,
-lastRequestID]( int score ) {
-        callback( score );
-        callbacks.erase( lastRequestID );
-    } callbacks[lastRequestID] = runCallbackAndRemove;
-    requestIsBeingProcessed    = true;
-#endif
-}
-
-void GameSharing::SetErrorHandler( std::function<void()> handler )
-{
-    errorHandler = handler;
-}
-
-*/

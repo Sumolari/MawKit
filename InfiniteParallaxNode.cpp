@@ -8,6 +8,8 @@
 
 #include "InfiniteParallaxNode.hpp"
 
+#include <cstdio>
+
 namespace MK {
 
 typedef InfiniteParallaxNode Self;
@@ -63,9 +65,10 @@ void Self::addLayer( cocos2d::Sprite *node, int localZOrder, cocos2d::Vec2 veloc
 					auto left  = pair.first;
 					auto right = pair.second;
 					if ( left->getPosition().x < -left->getContentSize().width * 1.5 ) {
-						left->setPosition( cocos2d::Point( right->getPosition().x +
-						                                   left->getContentSize().width,
-						                                   left->getPosition().y ) );
+						left->setPosition(
+						cocos2d::Point( right->getPosition().x +
+						                left->getContentSize().width,
+						                left->getPosition().y ) );
 					}
 				}
 			}
@@ -79,7 +82,8 @@ void Self::addLayer( cocos2d::Sprite *node, int localZOrder, cocos2d::Vec2 veloc
 					auto left  = pair.second;
 					if ( right->getPosition().x > right->getContentSize().width * 1.5 ) {
 						right->setPosition(
-						cocos2d::Point( left->getPosition().x - right->getContentSize().width,
+						cocos2d::Point( left->getPosition().x -
+						                right->getContentSize().width,
 						                right->getPosition().y ) );
 					}
 				}
