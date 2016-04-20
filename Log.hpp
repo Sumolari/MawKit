@@ -61,6 +61,14 @@ void warning( const char *format, ... );
 void debug( const char *format, ... );
 
 /**
+ *  Logs a verbose message that will **not** appear also in release builds.
+ *
+ *  @param format Format.
+ *  @param ...    Additional parameters.
+ */
+void verbose( const char *format, ... );
+
+/**
  *  Logs a critical message that will appear also in release builds and will
  *  also be logged to Fabric.
  *

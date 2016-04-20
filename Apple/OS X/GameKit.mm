@@ -35,7 +35,7 @@ void _showLeaderboard( int lID )
 {
 	if ( leaderboards.count > lID ) {
 		if ( !isAvailable() ) {
-			Log::debug( "Can't open Leaderboard %d as player didn't log in.", lID );
+			Log::verbose( "Can't open Leaderboard %d as player didn't log in.", lID );
 		}
 		else {
 
@@ -63,7 +63,7 @@ void _showLeaderboard( int lID )
 void showAchievementsList()
 {
 	if ( !isAvailable() ) {
-		Log::debug( "Can't open Achievements UI as player didn't log in." );
+		Log::verbose( "Can't open Achievements UI as player didn't log in." );
 	}
 	else {
 		GKGameCenterViewController *gkController =
@@ -104,6 +104,45 @@ const bool _signInPlayer()
 	}
 	return player.isAuthenticated;
 }
+
+namespace ReplayKit {
+
+const bool isAvailable()
+{
+	return false;
+}
+
+void startRecording( bool, std::function<void( bool )> callback )
+{
+	if ( callback != nullptr ) {
+		callback( false );
+	}
+}
+
+void stopRecording( std::function<void( bool )> callback )
+{
+	if ( callback != nullptr ) {
+		callback( false );
+	}
+}
+
+void discardRecording( std::function<void( void )> callback )
+{
+	if ( callback != nullptr ) {
+		callback();
+	}
+}
+
+void showLastRecordedReplayEditor()
+{
+}
+
+bool hasRecordedReplay()
+{
+	return false;
+}
+
+}; // namespace ReplayKit
 
 }; // namespace GameKit
 }; // namespace MK
