@@ -159,6 +159,11 @@ void _submitScore( const long long score, const int lID )
 	}
 }
 
+void _showLeaderboards()
+{
+	_showLeaderboard( 0 );
+}
+
 void _reportAchievementProgress( const int aID, const float progress )
 {
 	if ( achievements.count > aID ) {
