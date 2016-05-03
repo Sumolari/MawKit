@@ -208,8 +208,12 @@ void discardRecording( std::function<void( void )> callback = nullptr );
  *  Shows last recording editor and share options, if any.
  *
  *  @ios
+ *
+ *  @param sourceRect Rect of button that triggered editor popover.
+ *                    Defaults to `cocos2d::Rect::ZERO`.
+ *                    Only used on iPad.
  */
-void showLastRecordedReplayEditor();
+void showLastRecordedReplayEditor( cocos2d::Rect sourceRect = cocos2d::Rect::ZERO );
 
 /**
  *  Returns whether this is a replay recorded or not.

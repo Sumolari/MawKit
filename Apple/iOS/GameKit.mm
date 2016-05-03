@@ -217,9 +217,20 @@ void discardRecording( std::function<void( void )> callback )
 	} );
 }
 
-void showLastRecordedReplayEditor()
+void showLastRecordedReplayEditor( cocos2d::Rect sourceRect )
 {
 	if ( hasRecordedReplay() ) {
+
+		if ( [previewVCDelegate.lastRecordingPreviewVC
+		     respondsToSelector:@selector( popoverPresentationController )] ) {
+			// iOS8
+			previewVCDelegate.lastRecordingPreviewVC.popoverPresentationController.sourceView =
+			[[UIApplication sharedApplication].delegate window].rootViewController.view;
+			previewVCDelegate.lastRecordingPreviewVC.popoverPresentationController.sourceRect =
+			CGRectMake( sourceRect.origin.x, sourceRect.origin.y,
+			            sourceRect.size.width, sourceRect.size.height );
+		}
+
 		[[[UIApplication sharedApplication].delegate window]
 		 .rootViewController presentViewController:previewVCDelegate.lastRecordingPreviewVC
 		                                  animated:YES
