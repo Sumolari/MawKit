@@ -60,7 +60,9 @@ const bool hasPowerfulHardware()
 	case UIUserInterfaceIdiomUnspecified:
     case UIUserInterfaceIdiomCarPlay:
 		return false;
-	}
+    case UIUserInterfaceIdiomMac:
+        return true;
+    }
 }
 
 const bool hasNotch()

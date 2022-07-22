@@ -18,25 +18,29 @@ void init( const std::function<void( void )> callback )
 	callback();
 }
 
-const std::string getStringValueForKey( const std::string &key, const std::string &_default )
+const std::string getStringValueForKey( __attribute__((unused)) const std::string &key,
+                                        __attribute__((unused)) const std::string &_default )
 {
 	return _default;
 
 }
 
-const long long getLongValueForKey( const std::string &key, const long long _default )
-{
-	return _default;
-	
-}
-
-const bool getBoolValueForKey( const std::string &key, const bool _default )
+const long long getLongValueForKey( __attribute__((unused)) const std::string &key,
+                                    __attribute__((unused)) const long long _default )
 {
 	return _default;
 	
 }
 
-const float getFloatValueForKey( const std::string &key, const float _default )
+const bool getBoolValueForKey( __attribute__((unused)) const std::string &key,
+                               __attribute__((unused)) const bool _default )
+{
+	return _default;
+	
+}
+
+const float getFloatValueForKey( __attribute__((unused)) const std::string &key,
+                                 __attribute__((unused)) const float _default )
 {
 	return _default;
 	

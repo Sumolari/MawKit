@@ -28,43 +28,9 @@ NSMutableDictionary<NSString *, id> *delegates;
 namespace MK {
 namespace AdKit {
 
-void _init( std::string interstitialUnitID,
-            std::string bottomBannerUnitID,
-            BannerSize bottomBannerSize,
-            std::string topBannerUnitID,
-            BannerSize topBannerSize,
-            std::string videoRewardUnitID,
-            std::string adColonyAppID,
-            std::string adColonyZoneID,
-            std::string adColonyCustomID,
-            std::vector<std::string>
-            testingDevices )
-{
-	
-}
-
-void _showInterstitial( std::string adUnitID )
-{
-	
-}
-
-void _showVideoReward( std::string adUnitID, std::function<void( bool )> callback )
-{
-	
-}
-
 bool videoRewardsAvailable()
 {
     return false;
-}
-
-void _showTopBanner( std::string adUnitID )
-{
-	
-}
-
-void _showBottomBanner( std::string adUnitID )
-{
 }
 
 }; // namespace AdKit

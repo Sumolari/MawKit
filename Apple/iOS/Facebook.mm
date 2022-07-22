@@ -17,7 +17,8 @@
 namespace MK {
 namespace Facebook {
 
-void sendInvitation( const std::string &linkURL, const std::string &thumbnailURL )
+void sendInvitation( __attribute__((unused)) const std::string &linkURL,
+                     __attribute__((unused)) const std::string &thumbnailURL )
 {
 }
 
