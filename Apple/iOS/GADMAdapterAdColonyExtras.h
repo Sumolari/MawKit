@@ -6,8 +6,6 @@
 //
 //
 
-#import <GoogleMobileAds/GoogleMobileAds.h>
-
 @interface GADMAdapterAdColonyExtras : NSObject <GADAdNetworkExtras>
 
 @property (nonatomic, retain) NSString *currentZone;

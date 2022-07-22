@@ -61,6 +61,13 @@ const bool isOSX();
 const bool hasPowerfulHardware();
 
 /**
+ *  Returns whether this device has a notch or not.
+ *
+ *  @return `true` if this device has a notch.
+ */
+const bool hasNotch();
+
+/**
  *  Returns UUID of this device.
  *
  *  @note Current implementation of this method returns a fixed string.

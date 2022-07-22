@@ -7,7 +7,6 @@
 //
 
 #include "AdKit.hpp"
-#include "_AdKit.hpp"
 
 #include "cocos2d.h"
 
@@ -33,40 +32,25 @@ void init( std::string interstitialUnitID,
 {
 	if ( !enabled() ) return;
 
-	_init( interstitialUnitID, bottomBannerUnitID, bottomBannerSize,
-	       topBannerUnitID, topBannerSize, videoRewardUnitID, adColonyAppID,
-	       adColonyZoneID, adColonyCustomID, testingDevices );
 }
 
 void showInterstitial( std::string adUnitID )
 {
 	if ( !enabled() ) return;
-
-	_showInterstitial( adUnitID );
 }
 
 void showTopBanner( std::string adUnitID )
 {
 	if ( !enabled() ) return;
-
-	_showTopBanner( adUnitID );
 }
 
 void showBottomBanner( std::string adUnitID )
 {
 	if ( !enabled() ) return;
-
-	_showBottomBanner( adUnitID );
 }
 
 void showVideoReward( std::string adUnitID, std::function<void( bool )> callback )
 {
-	if ( !videoRewardsAvailable() ) {
-		callback( false );
-		return;
-	}
-
-	_showVideoReward( adUnitID, callback );
 }
 
 bool enabled()

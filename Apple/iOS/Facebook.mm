@@ -8,9 +8,6 @@
 
 #include "../../Facebook.hpp"
 
-#include <FBSDKCoreKit/FBSDKCoreKit.h>
-#include <FBSDKShareKit/FBSDKShareKit.h>
-
 #include "../../Features.hpp"
 #include "../Common/CPPUtils.h"
 
@@ -22,21 +19,6 @@ namespace Facebook {
 
 void sendInvitation( const std::string &linkURL, const std::string &thumbnailURL )
 {
-	AppController *appController =
-	(AppController *)[UIApplication sharedApplication].delegate;
-
-	FBSDKAppInviteContent *content = [[FBSDKAppInviteContent alloc] init];
-
-	content.appLinkURL = [NSURL URLWithString:to_nsstring( linkURL )];
-
-	content.appInvitePreviewImageURL = [NSURL URLWithString:to_nsstring( thumbnailURL )];
-
-	if ( [appController conformsToProtocol:@protocol( FBSDKAppInviteDialogDelegate )] ) {
-		[FBSDKAppInviteDialog
-		showFromViewController:appController.viewController
-		           withContent:content
-		              delegate:(id<FBSDKAppInviteDialogDelegate>)appController];
-	}
 }
 
 const bool enabled()

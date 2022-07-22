@@ -8,14 +8,12 @@
 
 #include "../../_Log.hpp"
 
-#include <Crashlytics/Crashlytics.h>
-
 namespace MK {
 namespace Log {
 
 void toFabric( const char *format, va_list list )
 {
-	CLSLogv( [NSString stringWithUTF8String:format], list );
+	NSLogv( [NSString stringWithUTF8String:format], list );
 }
 
 }; // namespace Log

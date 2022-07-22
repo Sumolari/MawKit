@@ -63,6 +63,12 @@ const bool hasPowerfulHardware()
 	}
 }
 
+const bool hasNotch()
+{
+    // TODO: Implement me!
+    return false;
+}
+
 
 }; // namespace Device
 }; // namespace MK
