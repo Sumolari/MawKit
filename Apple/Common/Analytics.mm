@@ -16,44 +16,46 @@
 namespace MK {
 namespace Analytics {
 
-void _logEvent( const std::string &event )
+void _logEvent( __attribute__((unused)) const std::string &event )
 {
 	
 }
 
-void _logEvent( const std::string &event, const std::map<std::string, std::string> &attr )
+void _logEvent( __attribute__((unused)) const std::string &event,
+                __attribute__((unused)) const std::map<std::string, std::string> &attr )
 {
 	
 }
 
-void _logEvent( const std::string &event, const std::map<std::string, double> &attr )
+void _logEvent( __attribute__((unused)) const std::string &event,
+                __attribute__((unused)) const std::map<std::string, double> &attr )
 {
 	
 }
 
-void _logLevelStart( const std::string &levelName,
-                     const std::map<std::string, std::string> &attributes )
+void _logLevelStart( __attribute__((unused)) const std::string &levelName,
+                     __attribute__((unused)) const std::map<std::string, std::string> &attributes )
 {
 
 }
 
-void _logLevelStart( const std::string &levelName,
-                     const std::map<std::string, double> &attributes )
+void _logLevelStart( __attribute__((unused)) const std::string &levelName,
+                     __attribute__((unused)) const std::map<std::string, double> &attributes )
 {
 }
 
-void _logLevelEnd( const std::string &levelName,
-                   const long long score,
-                   const bool succeeded,
-                   const std::map<std::string, std::string> &attr )
+void _logLevelEnd( __attribute__((unused)) const std::string &levelName,
+                   __attribute__((unused)) const long long score,
+                   __attribute__((unused)) const bool succeeded,
+                   __attribute__((unused)) const std::map<std::string, std::string> &attr )
 {
 
 }
 
-void _logLevelEnd( const std::string &levelName,
-                   const long long score,
-                   const bool succeeded,
-                   const std::map<std::string, double> &attr )
+void _logLevelEnd( __attribute__((unused)) const std::string &levelName,
+                   __attribute__((unused)) const long long score,
+                   __attribute__((unused)) const bool succeeded,
+                   __attribute__((unused)) const std::map<std::string, double> &attr )
 {
 
 }

@@ -18,38 +18,38 @@
 namespace MK {
 namespace AdKit {
 
-void init( std::string interstitialUnitID,
-           std::string bottomBannerUnitID,
-           BannerSize bottomBannerSize,
-           std::string topBannerUnitID,
-           BannerSize topBannerSize,
-           std::string videoRewardUnitID,
-           std::string adColonyAppID,
-           std::string adColonyZoneID,
-           std::string adColonyCustomID,
-           std::vector<std::string>
-           testingDevices )
+void init( __attribute__((unused)) std::string interstitialUnitID,
+           __attribute__((unused)) std::string bottomBannerUnitID,
+           __attribute__((unused)) BannerSize bottomBannerSize,
+           __attribute__((unused)) std::string topBannerUnitID,
+           __attribute__((unused)) BannerSize topBannerSize,
+           __attribute__((unused)) std::string videoRewardUnitID,
+           __attribute__((unused)) std::string adColonyAppID,
+           __attribute__((unused)) std::string adColonyZoneID,
+           __attribute__((unused)) std::string adColonyCustomID,
+           __attribute__((unused)) std::vector<std::string> testingDevices )
 {
 	if ( !enabled() ) return;
 
 }
 
-void showInterstitial( std::string adUnitID )
+void showInterstitial( __attribute__((unused)) std::string adUnitID )
 {
 	if ( !enabled() ) return;
 }
 
-void showTopBanner( std::string adUnitID )
+void showTopBanner( __attribute__((unused)) std::string adUnitID )
 {
 	if ( !enabled() ) return;
 }
 
-void showBottomBanner( std::string adUnitID )
+void showBottomBanner( __attribute__((unused)) std::string adUnitID )
 {
 	if ( !enabled() ) return;
 }
 
-void showVideoReward( std::string adUnitID, std::function<void( bool )> callback )
+void showVideoReward( __attribute__((unused)) std::string adUnitID,
+                      __attribute__((unused)) std::function<void( bool )> callback )
 {
 }
 

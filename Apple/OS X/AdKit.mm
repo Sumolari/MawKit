@@ -8,67 +8,11 @@
 
 
 #include "../../AdKit.hpp"
-#include "../../_AdKit.hpp"
 
 #include "../../Log.hpp"
 
 namespace MK {
 namespace AdKit {
-
-void _init( std::string interstitialUnitID,
-            std::string bottomBannerUnitID,
-            BannerSize bottomBannerSize,
-            std::string topBannerUnitID,
-            BannerSize topBannerSize,
-            std::string videoRewardUnitID,
-            std::string adColonyAppID,
-            std::string adColonyZoneID,
-            std::string adColonyCustomID,
-            std::vector<std::string>
-            testingDevices )
-{
-#pragma unused( interstitialUnitID )
-#pragma unused( bottomBannerUnitID )
-#pragma unused( bottomBannerSize )
-#pragma unused( topBannerUnitID )
-#pragma unused( topBannerSize )
-#pragma unused( videoRewardUnitID )
-#pragma unused( adColonyAppID )
-#pragma unused( adColonyZoneID )
-#pragma unused( adColonyCustomID )
-#pragma unused( testingDevices )
-	Log::nonCriticalCrash( MK::Log::ErrorMessageFormat::METHOD_NOT_AVAILABLE_ON_OSX,
-	                       "MK::AdKit::_init()" );
-}
-
-void _showInterstitial( std::string adUnitID )
-{
-#pragma unused( adUnitID )
-	Log::nonCriticalCrash( MK::Log::ErrorMessageFormat::METHOD_NOT_AVAILABLE_ON_OSX,
-	                       "MK::AdKit::_showInterstitial()" );
-}
-
-void _showTopBanner( std::string adUnitID )
-{
-#pragma unused( adUnitID )
-	Log::nonCriticalCrash( MK::Log::ErrorMessageFormat::METHOD_NOT_AVAILABLE_ON_OSX,
-	                       "MK::AdKit::_showTopBanner()" );
-}
-
-void _showBottomBanner( std::string adUnitID )
-{
-#pragma unused( adUnitID )
-	Log::nonCriticalCrash( MK::Log::ErrorMessageFormat::METHOD_NOT_AVAILABLE_ON_OSX,
-	                       "MK::AdKit::_showBottomBanner()" );
-}
-
-void _showVideoReward( std::string adUnitID, std::function<void( bool )> callback )
-{
-#pragma unused( adUnitID )
-#pragma unused( callback )
-	Log::nonCriticalCrash( MK::Log::ErrorMessageFormat::METHOD_NOT_AVAILABLE_ON_OSX,
-	                       "MK::AdKit::_showVideoReward()" );
-}
 
 bool videoRewardsAvailable()
 {

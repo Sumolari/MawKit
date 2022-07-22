@@ -133,7 +133,7 @@ void discardRecording( std::function<void( void )> callback )
 	}
 }
 
-void showLastRecordedReplayEditor()
+void showLastRecordedReplayEditor( __attribute__((unused)) cocos2d::Rect sourceRect )
 {
 }
 
