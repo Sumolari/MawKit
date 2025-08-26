@@ -9,10 +9,10 @@
 #import "ReceiptValidator.h"
 
 #include <Foundation/Foundation.h>
-#include <OpenSSL-Universal/openssl/bio.h>
-#include <OpenSSL-Universal/openssl/objects.h>
-#include <OpenSSL-Universal/openssl/pkcs7.h>
-#include <OpenSSL-Universal/openssl/x509.h>
+#include <OpenSSL/bio.h>
+#include <OpenSSL/objects.h>
+#include <OpenSSL/pkcs7.h>
+#include <OpenSSL/x509.h>
 #include <StoreKit/StoreKit.h>
 
 #include "../../Device.hpp"
@@ -127,7 +127,7 @@
 		if ( type != V_ASN1_INTEGER ) {
 			return false;
 		}
-		integer   = c2i_ASN1_INTEGER( NULL, &ptr, length );
+		integer   = d2i_ASN1_INTEGER( NULL, &ptr, length );
 		attr_type = ASN1_INTEGER_get( integer );
 		ASN1_INTEGER_free( integer );
 
@@ -136,7 +136,7 @@
 		if ( type != V_ASN1_INTEGER ) {
 			return false;
 		}
-		integer      = c2i_ASN1_INTEGER( NULL, &ptr, length );
+		integer      = d2i_ASN1_INTEGER( NULL, &ptr, length );
 		attr_version = ASN1_INTEGER_get( integer );
 		ASN1_INTEGER_free( integer );
 
