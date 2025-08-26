@@ -68,6 +68,13 @@ const bool hasPowerfulHardware();
 const bool hasNotch();
 
 /**
+ *  Returns whether this device has a dynamic island or not.
+ *
+ *  @return `true` if this device has a dynamic island.
+ */
+const bool hasDynamicIsland();
+
+/**
  *  Returns UUID of this device.
  *
  *  @note Current implementation of this method returns a fixed string.

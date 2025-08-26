@@ -101,7 +101,25 @@ const bool hasPowerfulHardware()
 
 const bool hasNotch()
 {
-    // TODO: Implement me!
+    // Check if the current Mac has a notch (MacBook Pro 14" and 16" from 2021 onwards)
+    NSScreen *mainScreen = [NSScreen mainScreen];
+    if (!mainScreen) {
+        return false;
+    }
+    
+    NSRect frame = mainScreen.frame;
+    NSRect visibleFrame = mainScreen.visibleFrame;
+    
+    // The notch creates a difference between the full frame and visible frame at the top
+    // If there's a significant difference in the top area, it likely indicates a notch
+    CGFloat topInset = frame.origin.y + frame.size.height - (visibleFrame.origin.y + visibleFrame.size.height);
+    
+    // A notch typically creates a top inset of around 10-20 points
+    return topInset > 8.0;
+}
+
+const bool hasDynamicIsland()
+{
     return false;
 }
 
