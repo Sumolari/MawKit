@@ -31,7 +31,17 @@ const std::string UUID()
 
 const Platform currentPlatform()
 {
+#if TARGET_OS_MACCATALYST
+	return Platform::OSX;
+#else
+    if (@available(iOS 14.0, *)) {
+        if ([NSProcessInfo processInfo].isiOSAppOnMac) {
+            return Platform::OSX;
+        }
+    }
+	
 	return Platform::iOS;
+#endif
 }
 
 const cocos2d::Size screenSize()

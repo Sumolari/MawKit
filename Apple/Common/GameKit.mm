@@ -22,8 +22,7 @@ LoginState currentLoginState = LoginState::Pending;
 
 void _init()
 {
-	cocos2d::ValueMap ids = cocos2d::FileUtils::getInstance()->getValueMapFromFile(
-	( MK::Device::isiOS() ) ? "ios_ids.plist" : "mac_ids.plist" );
+	cocos2d::ValueMap ids = cocos2d::FileUtils::getInstance()->getValueMapFromFile( "ios_ids.plist" );
 
 	cocos2d::ValueVector aIDs = ids.at( "Achievements" ).asValueVector();
 	cocos2d::ValueVector lIDs = ids.at( "Leaderboards" ).asValueVector();
